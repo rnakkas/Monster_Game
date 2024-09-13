@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjklsj45sc2"
-path="res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"
+uid="uid://driw2d4iqy1ds"
+path="res://.godot/imported/Live Bar.png-6599f1806a0e2fef33d684d4785cf5bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/monster-3-sheet.png"
-dest_files=["res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"]
+source_file="res://Assets/KingsPigs/12-Live and Coins/Live Bar.png"
+dest_files=["res://.godot/imported/Live Bar.png-6599f1806a0e2fef33d684d4785cf5bb.ctex"]
 
 [params]
 

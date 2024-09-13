@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjklsj45sc2"
-path="res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"
+uid="uid://bi787rgextavi"
+path="res://.godot/imported/Idle (26x26).png-16c7eec6a28ddb494be8efcf357bfb95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/monster-3-sheet.png"
-dest_files=["res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"]
+source_file="res://Assets/KingsPigs/05-Pig Thowing a Bomb/Idle (26x26).png"
+dest_files=["res://.godot/imported/Idle (26x26).png-16c7eec6a28ddb494be8efcf357bfb95.ctex"]
 
 [params]
 

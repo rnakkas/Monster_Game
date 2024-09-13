@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjklsj45sc2"
-path="res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"
+uid="uid://cll8reg81yp4g"
+path="res://.godot/imported/Ground (26x20).png-47685c9fd4ad51e7aaecdd43ff5739cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/monster-3-sheet.png"
-dest_files=["res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"]
+source_file="res://Assets/KingsPigs/06-Pig Hide in the Box/Ground (26x20).png"
+dest_files=["res://.godot/imported/Ground (26x20).png-47685c9fd4ad51e7aaecdd43ff5739cf.ctex"]
 
 [params]
 

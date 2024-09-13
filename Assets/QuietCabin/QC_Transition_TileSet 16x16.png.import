@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjklsj45sc2"
-path="res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"
+uid="uid://cs66ue12ofb25"
+path="res://.godot/imported/QC_Transition_TileSet 16x16.png-470a6111f1b4921648869a6b13a97bae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/monster-3-sheet.png"
-dest_files=["res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"]
+source_file="res://Assets/QuietCabin/QC_Transition_TileSet 16x16.png"
+dest_files=["res://.godot/imported/QC_Transition_TileSet 16x16.png-470a6111f1b4921648869a6b13a97bae.ctex"]
 
 [params]
 

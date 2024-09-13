@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjklsj45sc2"
-path="res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"
+uid="uid://slqleex6dge0"
+path="res://.godot/imported/Bomb Off.png-7fcbe37e5dd0b8eda0bbef8be8f26984.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/monster-3-sheet.png"
-dest_files=["res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"]
+source_file="res://Assets/KingsPigs/09-Bomb/Bomb Off.png"
+dest_files=["res://.godot/imported/Bomb Off.png-7fcbe37e5dd0b8eda0bbef8be8f26984.ctex"]
 
 [params]
 

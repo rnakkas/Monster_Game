@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjklsj45sc2"
-path="res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"
+uid="uid://11tua2ggh8oy"
+path="res://.godot/imported/Throwing Boom (26x26).png-8a02b131d361e865641bad8f027e8693.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/monster-3-sheet.png"
-dest_files=["res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"]
+source_file="res://Assets/KingsPigs/05-Pig Thowing a Bomb/Throwing Boom (26x26).png"
+dest_files=["res://.godot/imported/Throwing Boom (26x26).png-8a02b131d361e865641bad8f027e8693.ctex"]
 
 [params]
 

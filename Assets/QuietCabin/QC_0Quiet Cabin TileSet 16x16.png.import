@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjklsj45sc2"
-path="res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"
+uid="uid://dc5vyodemfa3x"
+path="res://.godot/imported/QC_0Quiet Cabin TileSet 16x16.png-9463665f73e00e81a368ce4d0218c84a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/monster-3-sheet.png"
-dest_files=["res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"]
+source_file="res://Assets/QuietCabin/QC_0Quiet Cabin TileSet 16x16.png"
+dest_files=["res://.godot/imported/QC_0Quiet Cabin TileSet 16x16.png-9463665f73e00e81a368ce4d0218c84a.ctex"]
 
 [params]
 

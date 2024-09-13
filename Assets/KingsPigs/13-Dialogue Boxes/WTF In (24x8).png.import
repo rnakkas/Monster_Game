@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjklsj45sc2"
-path="res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"
+uid="uid://xndc3c61cjgi"
+path="res://.godot/imported/WTF In (24x8).png-3d805f1e13d2d063bcf38075b671a9c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/monster-3-sheet.png"
-dest_files=["res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"]
+source_file="res://Assets/KingsPigs/13-Dialogue Boxes/WTF In (24x8).png"
+dest_files=["res://.godot/imported/WTF In (24x8).png-3d805f1e13d2d063bcf38075b671a9c2.ctex"]
 
 [params]
 

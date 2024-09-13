@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjklsj45sc2"
-path="res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"
+uid="uid://b40sxxm0c4iuk"
+path="res://.godot/imported/Box Pieces 3.png-aaee6276716390db900352ef85a6be2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/monster-3-sheet.png"
-dest_files=["res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"]
+source_file="res://Assets/KingsPigs/08-Box/Box Pieces 3.png"
+dest_files=["res://.godot/imported/Box Pieces 3.png-aaee6276716390db900352ef85a6be2c.ctex"]
 
 [params]
 

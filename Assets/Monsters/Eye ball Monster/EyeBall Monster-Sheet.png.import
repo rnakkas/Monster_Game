@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c12hfyfjq4jwk"
-path="res://.godot/imported/EyeBall Monster-Sheet.png-15ff023c8d14f87678da5c71851b70f4.ctex"
+path="res://.godot/imported/EyeBall Monster-Sheet.png-41a3cf1ee167eb395b15bd7c7878d08a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Eye ball Monster/EyeBall Monster-Sheet.png"
-dest_files=["res://.godot/imported/EyeBall Monster-Sheet.png-15ff023c8d14f87678da5c71851b70f4.ctex"]
+source_file="res://Assets/Monsters/Eye ball Monster/EyeBall Monster-Sheet.png"
+dest_files=["res://.godot/imported/EyeBall Monster-Sheet.png-41a3cf1ee167eb395b15bd7c7878d08a.ctex"]
 
 [params]
 

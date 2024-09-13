@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjklsj45sc2"
-path="res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"
+uid="uid://flwbay6wtrmo"
+path="res://.godot/imported/Old_man_idle.png-f381769a3d2024810c838437664ec02d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/monster-3-sheet.png"
-dest_files=["res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"]
+source_file="res://Assets/Villagers/1 Old_man/Old_man_idle.png"
+dest_files=["res://.godot/imported/Old_man_idle.png-f381769a3d2024810c838437664ec02d.ctex"]
 
 [params]
 

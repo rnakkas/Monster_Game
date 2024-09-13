@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjklsj45sc2"
-path="res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"
+uid="uid://cif6tjwiy26dy"
+path="res://.godot/imported/Boy_attack.png-0f373fb6a2e5327114263d47d8d381c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/monster-3-sheet.png"
-dest_files=["res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"]
+source_file="res://Assets/Villagers/5 Boy/Boy_attack.png"
+dest_files=["res://.godot/imported/Boy_attack.png-0f373fb6a2e5327114263d47d8d381c9.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjklsj45sc2"
-path="res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"
+uid="uid://d22gc8qqu4dog"
+path="res://.godot/imported/QC_TileSet_Stone 16x16.png-acd6dcc394741bb1b0d7ef69ce338061.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/monster-3-sheet.png"
-dest_files=["res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"]
+source_file="res://Assets/QuietCabin/QC_TileSet_Stone 16x16.png"
+dest_files=["res://.godot/imported/QC_TileSet_Stone 16x16.png-acd6dcc394741bb1b0d7ef69ce338061.ctex"]
 
 [params]
 

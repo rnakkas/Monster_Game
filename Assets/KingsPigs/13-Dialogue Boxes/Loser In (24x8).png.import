@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjklsj45sc2"
-path="res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"
+uid="uid://4dwr2h8ou62h"
+path="res://.godot/imported/Loser In (24x8).png-393caeece9f1b3201bf29bf7c03d5e02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/monster-3-sheet.png"
-dest_files=["res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"]
+source_file="res://Assets/KingsPigs/13-Dialogue Boxes/Loser In (24x8).png"
+dest_files=["res://.godot/imported/Loser In (24x8).png-393caeece9f1b3201bf29bf7c03d5e02.ctex"]
 
 [params]
 

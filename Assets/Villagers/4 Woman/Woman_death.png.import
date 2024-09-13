@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjklsj45sc2"
-path="res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"
+uid="uid://bnn04pnirvh1e"
+path="res://.godot/imported/Woman_death.png-fc3d11f8c1481b7a838def1537d02980.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/monster-3-sheet.png"
-dest_files=["res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"]
+source_file="res://Assets/Villagers/4 Woman/Woman_death.png"
+dest_files=["res://.godot/imported/Woman_death.png-fc3d11f8c1481b7a838def1537d02980.ctex"]
 
 [params]
 

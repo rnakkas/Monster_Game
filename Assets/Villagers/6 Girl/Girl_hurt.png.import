@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjklsj45sc2"
-path="res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"
+uid="uid://dqb1o4ew71il8"
+path="res://.godot/imported/Girl_hurt.png-523a2d004d38db35f2703e921c27fe5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/monster-3-sheet.png"
-dest_files=["res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"]
+source_file="res://Assets/Villagers/6 Girl/Girl_hurt.png"
+dest_files=["res://.godot/imported/Girl_hurt.png-523a2d004d38db35f2703e921c27fe5c.ctex"]
 
 [params]
 

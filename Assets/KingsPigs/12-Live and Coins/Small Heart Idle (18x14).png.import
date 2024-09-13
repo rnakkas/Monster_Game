@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjklsj45sc2"
-path="res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"
+uid="uid://08ongarxed42"
+path="res://.godot/imported/Small Heart Idle (18x14).png-f96da1d5494798d287ad7fe74bf61e70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/monster-3-sheet.png"
-dest_files=["res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"]
+source_file="res://Assets/KingsPigs/12-Live and Coins/Small Heart Idle (18x14).png"
+dest_files=["res://.godot/imported/Small Heart Idle (18x14).png-f96da1d5494798d287ad7fe74bf61e70.ctex"]
 
 [params]
 

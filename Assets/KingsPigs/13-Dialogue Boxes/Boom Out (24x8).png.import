@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjklsj45sc2"
-path="res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"
+uid="uid://bc5nma4rqbqbj"
+path="res://.godot/imported/Boom Out (24x8).png-9c2bdebec9c38a1b17d34a9680e10181.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/monster-3-sheet.png"
-dest_files=["res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"]
+source_file="res://Assets/KingsPigs/13-Dialogue Boxes/Boom Out (24x8).png"
+dest_files=["res://.godot/imported/Boom Out (24x8).png-9c2bdebec9c38a1b17d34a9680e10181.ctex"]
 
 [params]
 

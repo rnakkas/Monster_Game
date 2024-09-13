@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjklsj45sc2"
-path="res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"
+uid="uid://ca14we2t6yfhe"
+path="res://.godot/imported/Woman_idle.png-5940458d3186f77101f22f53bf615d0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Monsters/monster-3-sheet.png"
-dest_files=["res://.godot/imported/monster-3-sheet.png-edc58312e1610d45333f9073885110ea.ctex"]
+source_file="res://Assets/Villagers/4 Woman/Woman_idle.png"
+dest_files=["res://.godot/imported/Woman_idle.png-5940458d3186f77101f22f53bf615d0b.ctex"]
 
 [params]
 
