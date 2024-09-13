@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=3 uid="uid://7gf820v153gn"]
+
+[ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_oixfp"]
+[ext_resource type="FontFile" uid="uid://dyyk5yqut7yx3" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="1_wbepe"]
+
+[node name="game_over" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_oixfp")
+
+[node name="overlay" type="Panel" parent="."]
+offset_right = 442.0
+offset_bottom = 294.0
+scale = Vector2(2.91586, 2.5721)
+
+[node name="retry_button" type="Button" parent="."]
+offset_left = 496.0
+offset_top = 64.0
+offset_right = 768.0
+offset_bottom = 216.0
+theme_override_fonts/font = ExtResource("1_wbepe")
+theme_override_font_sizes/font_size = 41
+text = "RETRY"
+
+[node name="main_menu_button" type="Button" parent="."]
+offset_left = 496.0
+offset_top = 232.0
+offset_right = 768.0
+offset_bottom = 384.0
+theme_override_fonts/font = ExtResource("1_wbepe")
+theme_override_font_sizes/font_size = 26
+text = "MAIN MENU"
+
+[node name="quit_button" type="Button" parent="."]
+offset_left = 496.0
+offset_top = 400.0
+offset_right = 768.0
+offset_bottom = 552.0
+theme_override_fonts/font = ExtResource("1_wbepe")
+theme_override_font_sizes/font_size = 41
+text = "QUIT"
+
+[node name="game_over_label_1" type="Label" parent="."]
+offset_left = 376.0
+offset_top = 32.0
+offset_right = 446.0
+offset_bottom = 623.0
+theme_override_colors/font_color = Color(1, 0.124572, 0.0864938, 1)
+theme_override_colors/font_shadow_color = Color(0.998415, 0.667888, 0.631674, 1)
+theme_override_fonts/font = ExtResource("1_wbepe")
+theme_override_font_sizes/font_size = 62
+text = "G
+A
+M
+E
+
+O
+V
+E
+R
+"
+
+[node name="game_over_label_2" type="Label" parent="."]
+offset_left = 816.0
+offset_top = 32.0
+offset_right = 886.0
+offset_bottom = 623.0
+theme_override_colors/font_color = Color(1, 0.124572, 0.0864938, 1)
+theme_override_colors/font_shadow_color = Color(0.998415, 0.667888, 0.631674, 1)
+theme_override_fonts/font = ExtResource("1_wbepe")
+theme_override_font_sizes/font_size = 62
+text = "G
+A
+M
+E
+
+O
+V
+E
+R
+"
+
+[connection signal="pressed" from="retry_button" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="main_menu_button" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
