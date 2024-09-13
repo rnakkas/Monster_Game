@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://buyugeevdvx4l"]
 
 [ext_resource type="PackedScene" uid="uid://doyu4s23k25h6" path="res://Scenes/player.tscn" id="1_56fmg"]
-[ext_resource type="Texture2D" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="1_e7adu"]
+[ext_resource type="Texture2D" uid="uid://dgklpmkl2mh2x" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="1_e7adu"]
 [ext_resource type="Texture2D" uid="uid://dcm6tbuprwadh" path="res://Assets/Dungeon Tile Set.png" id="2_3hncf"]
 [ext_resource type="PackedScene" uid="uid://bckfdfrclu1e7" path="res://Scenes/gem.tscn" id="2_bhqb5"]
 [ext_resource type="PackedScene" uid="uid://bck2onp1s3v6j" path="res://Scenes/killzone.tscn" id="5_fb8lc"]
