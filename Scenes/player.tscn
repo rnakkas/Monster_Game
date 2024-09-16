@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://doyu4s23k25h6"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_kbkxt"]
-[ext_resource type="Texture2D" uid="uid://dqvjklsj45sc2" path="res://Assets/monster-3-sheet.png" id="3_vfdqw"]
+[ext_resource type="Texture2D" uid="uid://dqvjklsj45sc2" path="res://Assets/Monsters/monster-3-sheet.png" id="3_vfdqw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jrwcd"]
 atlas = ExtResource("3_vfdqw")
@@ -128,7 +128,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dhyyf"]
-radius = 5.28634
+radius = 4.0
 height = 12.3348
 
 [node name="player" type="CharacterBody2D"]
