@@ -8,50 +8,50 @@ process_mode = 2
 script = ExtResource("1_yeo84")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 1216.0
-offset_bottom = 720.0
+offset_right = 1664.0
+offset_bottom = 984.0
 
 [node name="resume_button" type="Button" parent="."]
-offset_left = 440.0
-offset_top = 40.0
-offset_right = 656.0
-offset_bottom = 168.0
+offset_left = 696.0
+offset_top = 128.0
+offset_right = 912.0
+offset_bottom = 256.0
 theme_override_fonts/font = ExtResource("1_ijr0q")
 theme_override_font_sizes/font_size = 27
 text = "RESUME"
 
 [node name="restart_button" type="Button" parent="."]
-offset_left = 440.0
-offset_top = 312.0
-offset_right = 656.0
-offset_bottom = 440.0
+offset_left = 696.0
+offset_top = 400.0
+offset_right = 912.0
+offset_bottom = 528.0
 theme_override_fonts/font = ExtResource("1_ijr0q")
 theme_override_font_sizes/font_size = 27
 text = "RESTART"
 
 [node name="quit_button" type="Button" parent="."]
-offset_left = 440.0
-offset_top = 448.0
-offset_right = 656.0
-offset_bottom = 576.0
+offset_left = 696.0
+offset_top = 536.0
+offset_right = 912.0
+offset_bottom = 664.0
 theme_override_fonts/font = ExtResource("1_ijr0q")
 theme_override_font_sizes/font_size = 27
 text = "QUIT"
 
 [node name="main_menu_button" type="Button" parent="."]
-offset_left = 440.0
-offset_top = 176.0
-offset_right = 656.0
-offset_bottom = 304.0
+offset_left = 696.0
+offset_top = 264.0
+offset_right = 912.0
+offset_bottom = 392.0
 theme_override_fonts/font = ExtResource("1_ijr0q")
 theme_override_font_sizes/font_size = 23
 text = "MAIN MENU"
 
 [node name="pause_label_1" type="Label" parent="."]
-offset_left = 264.0
-offset_top = 128.0
-offset_right = 334.0
-offset_bottom = 528.0
+offset_left = 520.0
+offset_top = 192.0
+offset_right = 590.0
+offset_bottom = 592.0
 theme_override_colors/font_color = Color(1, 0.923881, 0.910825, 1)
 theme_override_colors/font_shadow_color = Color(1, 0.124572, 0.0864943, 1)
 theme_override_fonts/font = ExtResource("1_ijr0q")
@@ -64,10 +64,10 @@ E
 D"
 
 [node name="pause_label_2" type="Label" parent="."]
-offset_left = 768.0
-offset_top = 128.0
-offset_right = 838.0
-offset_bottom = 528.0
+offset_left = 1024.0
+offset_top = 192.0
+offset_right = 1094.0
+offset_bottom = 592.0
 theme_override_colors/font_color = Color(1, 0.923881, 0.910825, 1)
 theme_override_colors/font_shadow_color = Color(1, 0.124572, 0.0864943, 1)
 theme_override_fonts/font = ExtResource("1_ijr0q")

@@ -1,24 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://doyu4s23k25h6"]
+[gd_scene load_steps=17 format=3 uid="uid://doyu4s23k25h6"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_kbkxt"]
-[ext_resource type="Texture2D" uid="uid://beubfm7dpwiow" path="res://Assets/Monsters/monster-1.png" id="2_lq22a"]
 [ext_resource type="Texture2D" uid="uid://dqvjklsj45sc2" path="res://Assets/Monsters/monster-3-sheet.png" id="3_vfdqw"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kju66"]
-atlas = ExtResource("2_lq22a")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t85sm"]
-atlas = ExtResource("2_lq22a")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_06rvc"]
-atlas = ExtResource("2_lq22a")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m124f"]
-atlas = ExtResource("2_lq22a")
-region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jrwcd"]
 atlas = ExtResource("3_vfdqw")
@@ -66,23 +49,6 @@ region = Rect2(64, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rt2jk"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kju66")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t85sm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_06rvc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m124f")
-}],
-"loop": true,
-"name": &"attack",
-"speed": 10.99
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jrwcd")
@@ -165,6 +131,9 @@ animations = [{
 radius = 4.0
 height = 12.3348
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8qxk"]
+size = Vector2(12, 4)
+
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_kbkxt")
@@ -172,9 +141,19 @@ script = ExtResource("1_kbkxt")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -25)
 sprite_frames = SubResource("SpriteFrames_rt2jk")
-animation = &"idle"
+animation = &"fall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -24)
 scale = Vector2(1, 1.135)
 shape = SubResource("CapsuleShape2D_dhyyf")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, -19)
+shape = SubResource("RectangleShape2D_q8qxk")
+debug_color = Color(0.458616, 0.577011, 0.401989, 0.42)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -3,12 +3,13 @@ extends CharacterBody2D
 
 @export var SPEED: float = 200.0
 @export var JUMP_VELOCITY: float = -400.0
+@export var headstomp_bounce_velocity: float = -150.0
 @export var gravity: float = 980
 
 @onready var animation = $AnimatedSprite2D
 @onready var pause_menu = %pause_menu
 
-enum STATE {IDLE, RUN, JUMP, FALL}
+enum STATE {IDLE, RUN, JUMP, FALL, HEADSTOMP}
 var current_state : STATE
 
 var direction: Vector2 = Vector2.ZERO
@@ -30,6 +31,8 @@ func _exit_state() -> void:
 			pass
 		STATE.FALL:
 			pass
+		STATE.HEADSTOMP:
+			pass
 
 func _enter_state() -> void:
 	match current_state:
@@ -42,6 +45,9 @@ func _enter_state() -> void:
 			animation.play("jump")
 		STATE.FALL:
 			animation.play("fall")
+		STATE.HEADSTOMP:
+			velocity.y = headstomp_bounce_velocity
+			animation.play("jump")
 
 func _update_state(delta: float) -> void:
 	direction = Input.get_vector("move_left", "move_right", "move_up","move_down")
@@ -94,6 +100,15 @@ func _update_state(delta: float) -> void:
 				velocity.y += gravity * delta
 				
 			move_and_slide()
+		
+		STATE.HEADSTOMP:
+			velocity.x = direction.x * SPEED
+			_flip_sprite()
+			if !is_on_floor():
+				velocity.y += gravity * delta
+				if velocity.y > 0:
+					_set_state(STATE.FALL)
+			move_and_slide()
 	
 func _flip_sprite() -> void:
 	if velocity.x > 0:
@@ -109,4 +124,8 @@ func _physics_process(delta: float) -> void:
 	
 func _pause_game() -> void:
 	pause_menu._paused()
-	
+
+func _on_area_2d_area_entered(area):
+	if area.name == "enemy_headstomp_area":
+		print("headstomp")
+		_set_state(STATE.HEADSTOMP)
