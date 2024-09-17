@@ -137,6 +137,7 @@ size = Vector2(12, 4)
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_kbkxt")
+headstomp_bounce_velocity = -210.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -25)

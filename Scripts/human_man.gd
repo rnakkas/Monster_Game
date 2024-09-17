@@ -1,22 +1,22 @@
 extends CharacterBody2D
 
-@onready var animation = $AnimatedSprite2D
-@onready var raycast_right = $raycast_right
-@onready var raycast_left = $raycast_left
-@onready var enemy_headstomp_area = $enemy_headstomp_area
+@onready var animation := $AnimatedSprite2D
+@onready var raycast_right := $raycast_right
+@onready var raycast_left := $raycast_left
+@onready var enemy_headstomp_area := $enemy_headstomp_area
 
+@export var speed: float = 60.0
+@export var gravity: float = 980.0
+@export var health: float = 2.0
 
-@export var speed = 30
-@export var gravity = 980
 var direction: int = 1
 
 enum STATE {WALK, HURT, DEATH}
 var current_state: STATE
-var health: float = 2.0
 
 func _set_state(new_state: STATE) -> void:
-	#if current_state == new_state:
-		#return
+	if current_state == STATE.HURT:
+		await animation.animation_finished
 	_exit_state()
 	current_state = new_state
 	_enter_state()
@@ -33,6 +33,7 @@ func _enter_state() -> void:
 		STATE.WALK:
 			animation.play("walk")
 		STATE.HURT:
+			health -= 1.0
 			animation.play("hurt")
 		STATE.DEATH:
 			animation.play("death")
@@ -49,7 +50,6 @@ func _update_state(delta: float) -> void:
 			position.x += speed * delta * direction
 		
 		STATE.HURT:
-			health -= 1.0
 			if health <= 0.0:
 				_set_state(STATE.DEATH)
 			else:
@@ -60,7 +60,7 @@ func _update_state(delta: float) -> void:
 			self.set_collision_mask_value(1, 0)
 			enemy_headstomp_area.set_collision_mask_value(1, 0)
 			enemy_headstomp_area.set_collision_mask_value(2, 0)
-			
+			enemy_headstomp_area.set_collision_layer_value(1, 0)
 			
 func _physics_process(delta) -> void:
 	_update_state(delta)
@@ -68,7 +68,8 @@ func _physics_process(delta) -> void:
 func _ready() -> void:
 	_set_state(STATE.WALK)
 
-func _on_enemy_headstomp_area_body_entered(body):
+func _on_enemy_headstomp_area_body_entered(body) -> void:
 	if body.name == "player":
-		print("sdfsd")
 		_set_state(STATE.HURT)
+	
+
