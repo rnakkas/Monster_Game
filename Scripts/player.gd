@@ -94,9 +94,8 @@ func _update_state(delta: float) -> void:
 				velocity.y += gravity * delta
 				
 			move_and_slide()
-				
 	
-func _flip_sprite():
+func _flip_sprite() -> void:
 	if velocity.x > 0:
 		animation.flip_h = false
 	elif velocity.x < 0:
@@ -109,6 +108,5 @@ func _physics_process(delta: float) -> void:
 	_update_state(delta)
 	
 func _pause_game() -> void:
-	print("pause")
 	pause_menu._paused()
 	
