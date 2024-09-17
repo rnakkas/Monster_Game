@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dk1mcej54xn5h"]
+[gd_scene load_steps=18 format=3 uid="uid://dk1mcej54xn5h"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_fhjgm"]
 [ext_resource type="FontFile" uid="uid://dyyk5yqut7yx3" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="1_p4s3j"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dc5vyodemfa3x" path="res://Assets/QuietCabin/QC_0Quiet Cabin TileSet 16x16.png" id="3_3njjo"]
 [ext_resource type="Texture2D" uid="uid://dqvjklsj45sc2" path="res://Assets/Monsters/monster-3-sheet.png" id="4_g4jjj"]
 [ext_resource type="Texture2D" uid="uid://dbonv4llrgnnr" path="res://Assets/KingsPigs/11-Door/Idle.png" id="4_mhi3l"]
+[ext_resource type="FontFile" uid="uid://bejm8uq73cvct" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Background/PixelOperator8-Bold.ttf" id="7_mmq52"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8kjyj"]
 texture = ExtResource("2_8yeqt")
@@ -415,24 +416,24 @@ format = 2
 layer_0/tile_data = PackedInt32Array(1376278, 131073, 2, 1441814, 196609, 15, 1507350, 196609, 15, 1572886, 262145, 15, 1638422, 262145, 15, 1703958, 262145, 16, 1376279, 131073, 2, 1441815, 196609, 15, 1507351, 262145, 15, 1572887, 262145, 15, 1638423, 262145, 15, 1703959, 196609, 16, 1376280, 131073, 2, 1441816, 196609, 13, 1507352, 262145, 15, 1572888, 262145, 15, 1638424, 262145, 15, 1703960, 196609, 16, 1376281, 131073, 2, 1441817, 131073, 13, 1507353, 262145, 15, 1572889, 262145, 15, 1638425, 262145, 15, 1703961, 262145, 16, 1376282, 131073, 2, 1441818, 196609, 13, 1507354, 262145, 15, 1572890, 262145, 15, 1638426, 262145, 15, 1703962, 196609, 16, 1769494, 65537, 7, 1769495, 131073, 7, 1769496, 131073, 7, 1769497, 131073, 7, 1769498, 131073, 7, 1769499, 131073, 7, 1769500, 131073, 7, 1769501, 131073, 7, 1769502, 131073, 7, 1769503, 131073, 7, 1769504, 131073, 7, 1441819, 262145, 13, 1507355, 262145, 15, 1441820, 327681, 13, 1507356, 262145, 15, 1441821, 262145, 13, 1507357, 262145, 15, 1441822, 131073, 13, 1507358, 262145, 15, 1441823, 196609, 13, 1507359, 262145, 15, 1441824, 262145, 13, 1507360, 262145, 15, 1572892, 262145, 15, 1638428, 262145, 15, 1572893, 262145, 15, 1638429, 262145, 15, 1572894, 262145, 15, 1638430, 262145, 15, 1638431, 262145, 15, 1703967, 196609, 16, 1638432, 262145, 15, 1703968, 196609, 16, 1638433, 262145, 15, 1703969, 262145, 16, 1572895, 262145, 15, 1572896, 262145, 15, 1572897, 262145, 15, 1638427, 262145, 15, 1703963, 196609, 16, 1703964, 196609, 16, 1703965, 196609, 16, 1572891, 262145, 15, 1703966, 196609, 16, 1376283, 131073, 2, 1376284, 131073, 2, 1376285, 131073, 2, 1376286, 131073, 2, 1376287, 131073, 2, 1376288, 131073, 2, 1376289, 131073, 2, 1376290, 131073, 2, 1376277, 131073, 2, 1441813, 131073, 2, 1507349, 131073, 2, 1572885, 131073, 2, 1638421, 131073, 2, 1703957, 131073, 2, 1769493, 131073, 2, 1835029, 131073, 2, 1900565, 131073, 2, 1966101, 131073, 2, 1966102, 65537, 8, 1966103, 131073, 8, 1966104, 131073, 8, 1966105, 131073, 8, 1966106, 131073, 8, 1966107, 131073, 8, 1966108, 131073, 8, 1966109, 131073, 8, 1966110, 131073, 8, 1966111, 131073, 8, 1966112, 131073, 8, 1966113, 131073, 8, 1966114, 196609, 8, 1966115, 131073, 2, 1376291, 131073, 2, 1441827, 131073, 2, 1507363, 131073, 2, 1572899, 131073, 2, 1638435, 131073, 2, 1703971, 131073, 2, 1769507, 131073, 2, 1835043, 131073, 2, 1900579, 131073, 2, 1441825, 327681, 13, 1441826, 262145, 15, 1507362, 262145, 15, 1572898, 262145, 15, 1638434, 262145, 15, 1703970, 262145, 16, 1769506, 196609, 7, 1835042, 196609, 8, 1900578, 196609, 8, 1900577, 131073, 8, 1900576, 131073, 8, 1900575, 131073, 8, 1900574, 131073, 8, 1900573, 131073, 8, 1900572, 131073, 8, 1900571, 131073, 8, 1900570, 131073, 8, 1900569, 131073, 8, 1900568, 131073, 8, 1900567, 131073, 8, 1900566, 65537, 8, 1835030, 65537, 8, 1769505, 131073, 7, 1835031, 131073, 8, 1835032, 131073, 8, 1835033, 131073, 8, 1835034, 131073, 8, 1835035, 131073, 8, 1835036, 131073, 8, 1835037, 131073, 8, 1835038, 131073, 8, 1835039, 131073, 8, 1835040, 131073, 8, 1835041, 131073, 8, 1507361, 262145, 15, 2031637, 131073, 2, 2031638, 131073, 2, 2031639, 131073, 2, 2031640, 131073, 2, 2031641, 131073, 2, 2031642, 131073, 2, 2031643, 131073, 2, 2031644, 131073, 2, 2031645, 131073, 2, 2031646, 131073, 2, 2031647, 131073, 2, 2031648, 131073, 2, 2031649, 131073, 2, 2031650, 131073, 2, 2031651, 131073, 2)
 
 [node name="door" type="Sprite2D" parent="."]
-position = Vector2(1269, 416)
+position = Vector2(782, 416)
 scale = Vector2(5.1087, 5.53571)
 texture = ExtResource("4_mhi3l")
 
 [node name="play_button" type="Button" parent="."]
-offset_left = 679.0
-offset_top = 125.0
-offset_right = 943.0
-offset_bottom = 278.0
+offset_left = 163.0
+offset_top = 680.0
+offset_right = 383.0
+offset_bottom = 808.0
 theme_override_fonts/font = ExtResource("1_p4s3j")
 theme_override_font_sizes/font_size = 38
 text = "PLAY"
 
 [node name="quit_button" type="Button" parent="."]
-offset_left = 679.0
-offset_top = 344.0
-offset_right = 948.0
-offset_bottom = 499.0
+offset_left = 1255.0
+offset_top = 681.0
+offset_right = 1471.0
+offset_bottom = 809.0
 theme_override_fonts/font = ExtResource("1_p4s3j")
 theme_override_font_sizes/font_size = 38
 text = "QUIT"
@@ -444,6 +445,17 @@ sprite_frames = SubResource("SpriteFrames_l2sg2")
 autoplay = "default"
 frame_progress = 0.942866
 flip_h = true
+
+[node name="title" type="Label" parent="."]
+offset_left = 275.0
+offset_top = 164.0
+offset_right = 1319.0
+offset_bottom = 269.0
+theme_override_colors/font_color = Color(0.627451, 0.627451, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.729412, 0.376471, 0.054902, 1)
+theme_override_fonts/font = ExtResource("7_mmq52")
+theme_override_font_sizes/font_size = 81
+text = "Scare The Cats"
 
 [connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
