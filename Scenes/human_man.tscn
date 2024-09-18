@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c1o2ylh0aybkd" path="res://Assets/Villagers/3 Man/Man_hurt.png" id="2_caqbb"]
 [ext_resource type="Texture2D" uid="uid://cje1mtcinqa4j" path="res://Assets/Villagers/3 Man/Man_idle.png" id="3_1nbcp"]
 [ext_resource type="Texture2D" uid="uid://j8c7qf2bhk3v" path="res://Assets/Villagers/3 Man/Man_walk.png" id="4_lsgd4"]
-[ext_resource type="PackedScene" uid="uid://cghef2s5vndro" path="res://Scenes/enemy_headstomp_area.tscn" id="7_mgf00"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i8os6"]
 atlas = ExtResource("1_o6q5p")
@@ -170,10 +169,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8nii"]
-size = Vector2(15, 34)
+size = Vector2(15, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qr0j8"]
 size = Vector2(19, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4avoo"]
+size = Vector2(12, 8)
 
 [node name="human_man" type="CharacterBody2D"]
 script = ExtResource("1_pep0m")
@@ -184,7 +186,7 @@ sprite_frames = SubResource("SpriteFrames_wvg0x")
 animation = &"walk"
 
 [node name="collider" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 7)
+position = Vector2(1.5, 11)
 shape = SubResource("RectangleShape2D_x8nii")
 debug_color = Color(0.65424, 0.514237, 0.165735, 0.42)
 
@@ -194,8 +196,15 @@ debug_color = Color(0.65424, 0.514237, 0.165735, 0.42)
 position = Vector2(-0.5, 11)
 shape = SubResource("RectangleShape2D_qr0j8")
 
-[node name="enemy_headstomp_area" parent="." instance=ExtResource("7_mgf00")]
+[node name="enemy_headstomp_area" type="Area2D" parent="."]
 position = Vector2(1, -7)
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_headstomp_area"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_4avoo")
+one_way_collision_margin = 0.0
+debug_color = Color(0.889986, 0.225315, 0.593741, 0.42)
 
 [node name="raycast_right" type="RayCast2D" parent="."]
 position = Vector2(0, 6)

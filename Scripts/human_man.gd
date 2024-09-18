@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var animation := $AnimatedSprite2D
 @onready var raycast_right := $raycast_right
 @onready var raycast_left := $raycast_left
-@onready var enemy_headstomp_area := $enemy_headstomp_area
+@onready var enemy_headstomp_area = $enemy_headstomp_area
 
 @export var speed: float = 60.0
 @export var gravity: float = 980.0
@@ -31,11 +31,14 @@ func _exit_state() -> void:
 func _enter_state() -> void:
 	match current_state: 
 		STATE.WALK:
+			_turn_collisions_on()
 			animation.play("walk")
 		STATE.HURT:
+			_turn_collisions_off()
 			health -= 1.0
 			animation.play("hurt")
 		STATE.DEATH:
+			_turn_collisions_off()
 			animation.play("death")
 
 func _update_state(delta: float) -> void:
@@ -55,12 +58,11 @@ func _update_state(delta: float) -> void:
 			else:
 				_set_state(STATE.WALK)
 		
-		STATE.DEATH:
-			self.set_collision_layer_value(1, 0)
-			self.set_collision_mask_value(1, 0)
-			enemy_headstomp_area.set_collision_mask_value(1, 0)
-			enemy_headstomp_area.set_collision_mask_value(2, 0)
-			enemy_headstomp_area.set_collision_layer_value(1, 0)
+		#STATE.DEATH:
+			#self.set_collision_layer_value(1, 0)
+			#self.set_collision_mask_value(1, 0)
+			#enemy_headstomp_area.set_collision_mask_value(2, 0)
+			#enemy_headstomp_area.set_collision_layer_value(1, 0)
 			
 func _physics_process(delta) -> void:
 	_update_state(delta)
@@ -68,8 +70,19 @@ func _physics_process(delta) -> void:
 func _ready() -> void:
 	_set_state(STATE.WALK)
 
-func _on_enemy_headstomp_area_body_entered(body) -> void:
-	if body.name == "player":
-		_set_state(STATE.HURT)
-	
+func _turn_collisions_off() -> void:
+	self.set_collision_layer_value(1, 0)
+	self.set_collision_mask_value(1, 0)
+	enemy_headstomp_area.set_collision_mask_value(2, 0)
+	enemy_headstomp_area.set_collision_layer_value(1, 0)
 
+func _turn_collisions_on() -> void:
+	self.set_collision_layer_value(1, 1)
+	self.set_collision_mask_value(1, 1)
+	enemy_headstomp_area.set_collision_mask_value(2, 1)
+	enemy_headstomp_area.set_collision_layer_value(1, 1)
+
+func _on_enemy_headstomp_area_body_entered(body):
+	if body.name == "player":
+		print("feet")
+		_set_state(STATE.HURT)

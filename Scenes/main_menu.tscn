@@ -447,15 +447,15 @@ frame_progress = 0.942866
 flip_h = true
 
 [node name="title" type="Label" parent="."]
-offset_left = 275.0
+offset_left = 294.0
 offset_top = 164.0
-offset_right = 1319.0
+offset_right = 1338.0
 offset_bottom = 269.0
 theme_override_colors/font_color = Color(0.627451, 0.627451, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.729412, 0.376471, 0.054902, 1)
 theme_override_fonts/font = ExtResource("7_mmq52")
 theme_override_font_sizes/font_size = 81
-text = "Scare The Cats"
+text = "Creepy Crawly"
 
 [connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]

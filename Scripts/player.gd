@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export var SPEED: float = 200.0
 @export var JUMP_VELOCITY: float = -400.0
-@export var headstomp_bounce_velocity: float = -190.0
+@export var headstomp_bounce_velocity: float = -30.0
 @export var gravity: float = 980
 
 @onready var animation = $AnimatedSprite2D
@@ -125,8 +125,7 @@ func _physics_process(delta: float) -> void:
 func _pause_game() -> void:
 	pause_menu._paused()
 
-func _on_area_2d_area_entered(area):
+func _on_feet_area_entered(area):
 	if area.name == "enemy_headstomp_area":
 		print("headstomp")
 		_set_state(STATE.HEADSTOMP)
-		
