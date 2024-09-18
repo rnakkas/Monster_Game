@@ -9,7 +9,7 @@ extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 @onready var pause_menu = %pause_menu
 
-enum STATE {IDLE, RUN, JUMP, FALL, HEADSTOMP}
+enum STATE {IDLE, RUN, JUMP, FALL, HEADSTOMP, HURT, DEATH}
 var current_state : STATE
 
 var direction: Vector2 = Vector2.ZERO
