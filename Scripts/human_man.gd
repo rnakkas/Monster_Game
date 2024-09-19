@@ -148,3 +148,8 @@ func _on_agro_area_body_exited(body):
 	if body.name == "player":
 		print("no agro")
 		chase_status = false
+
+## TODO: get the player node get_node(path to player node)
+## TODO: get player position (player.position - body.position)
+## TODO: flip sprite depending on direction +ve or -ve to face player
+## TODO: add new speed called chase_speed for when chasing player

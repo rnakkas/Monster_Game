@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY: float = -400.0
 @export var headstomp_bounce_velocity: float = -30.0
 @export var gravity: float = 980
+@export var hp: float = 3.0
 
 @onready var animation = $AnimatedSprite2D
 @onready var pause_menu_1 = $pause_menu_1
@@ -12,11 +13,15 @@ extends CharacterBody2D
 enum STATE {IDLE, RUN, JUMP, FALL, HEADSTOMP, HURT, DEATH}
 var current_state : STATE
 
+var hit_status: bool
+
 var direction: Vector2 = Vector2.ZERO
 
 func _set_state(new_state: STATE) -> void:
 	if current_state == new_state:
 		return
+	if current_state == STATE.HURT:
+		await animation.animation_finished
 	_exit_state()
 	current_state = new_state
 	_enter_state()
@@ -33,6 +38,8 @@ func _exit_state() -> void:
 			pass
 		STATE.HEADSTOMP:
 			pass
+		STATE.HURT:
+			pass
 
 func _enter_state() -> void:
 	match current_state:
@@ -48,6 +55,8 @@ func _enter_state() -> void:
 		STATE.HEADSTOMP:
 			velocity.y = headstomp_bounce_velocity
 			animation.play("jump")
+		STATE.HURT:
+			animation.play("hurt")
 
 func _update_state(delta: float) -> void:
 	direction = Input.get_vector("move_left", "move_right", "move_up","move_down")
@@ -129,3 +138,8 @@ func _on_feet_area_entered(area):
 	if area.name == "hurt_area":
 		print("headstomp")
 		_set_state(STATE.HEADSTOMP)
+
+func _on_hurt_area_area_entered(area):
+	if area.name == "attack_area":
+		print("hit!")
+		hit_status = true
