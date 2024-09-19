@@ -5,6 +5,7 @@ func _ready() -> void:
 
 func _paused() -> void:
 	get_tree().paused = true
+	print(str(get_tree()))
 	self.show()
 
 func _on_resume_button_pressed() -> void:
