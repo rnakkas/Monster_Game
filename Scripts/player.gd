@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var gravity: float = 980
 
 @onready var animation = $AnimatedSprite2D
-@onready var pause_menu = %pause_menu
+@onready var pause_menu_1 = $pause_menu_1
 
 enum STATE {IDLE, RUN, JUMP, FALL, HEADSTOMP, HURT, DEATH}
 var current_state : STATE
@@ -123,7 +123,7 @@ func _physics_process(delta: float) -> void:
 	_update_state(delta)
 	
 func _pause_game() -> void:
-	pause_menu._paused()
+	pause_menu_1._paused()
 
 func _on_feet_area_entered(area):
 	if area.name == "hurt_area":

@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://cve7aevrhfvbl"]
 
-[ext_resource type="FontFile" uid="uid://dyyk5yqut7yx3" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="1_ijr0q"]
-[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_yeo84"]
+[ext_resource type="Script" path="res://Scripts/pause_menu_1.gd" id="1_28wqg"]
+[ext_resource type="FontFile" uid="uid://dyyk5yqut7yx3" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_nucvy"]
 
-[node name="pause_menu" type="CanvasLayer"]
-script = ExtResource("1_yeo84")
+[node name="pause_menu_1" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_28wqg")
 
 [node name="overlay" type="Panel" parent="."]
 offset_right = 1616.0
@@ -15,7 +16,7 @@ offset_left = 640.0
 offset_top = 128.0
 offset_right = 960.0
 offset_bottom = 256.0
-theme_override_fonts/font = ExtResource("1_ijr0q")
+theme_override_fonts/font = ExtResource("2_nucvy")
 theme_override_font_sizes/font_size = 20
 text = "RESUME"
 
@@ -24,7 +25,7 @@ offset_left = 640.0
 offset_top = 320.0
 offset_right = 960.0
 offset_bottom = 448.0
-theme_override_fonts/font = ExtResource("1_ijr0q")
+theme_override_fonts/font = ExtResource("2_nucvy")
 theme_override_font_sizes/font_size = 20
 text = "RESTART LEVEL"
 
@@ -33,7 +34,7 @@ offset_left = 640.0
 offset_top = 512.0
 offset_right = 960.0
 offset_bottom = 640.0
-theme_override_fonts/font = ExtResource("1_ijr0q")
+theme_override_fonts/font = ExtResource("2_nucvy")
 theme_override_font_sizes/font_size = 22
 text = "MAIN MENU"
 
@@ -42,7 +43,7 @@ offset_left = 640.0
 offset_top = 704.0
 offset_right = 960.0
 offset_bottom = 832.0
-theme_override_fonts/font = ExtResource("1_ijr0q")
+theme_override_fonts/font = ExtResource("2_nucvy")
 theme_override_font_sizes/font_size = 22
 text = "QUIT"
 
@@ -51,7 +52,7 @@ offset_left = 448.0
 offset_top = 125.0
 offset_right = 509.0
 offset_bottom = 837.0
-theme_override_fonts/font = ExtResource("1_ijr0q")
+theme_override_fonts/font = ExtResource("2_nucvy")
 theme_override_font_sizes/font_size = 61
 text = "P
 
@@ -70,7 +71,7 @@ offset_left = 1096.0
 offset_top = 125.0
 offset_right = 1157.0
 offset_bottom = 837.0
-theme_override_fonts/font = ExtResource("1_ijr0q")
+theme_override_fonts/font = ExtResource("2_nucvy")
 theme_override_font_sizes/font_size = 61
 text = "P
 
