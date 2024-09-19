@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dbv5vhnabet18"]
+[gd_scene load_steps=31 format=3 uid="uid://dbv5vhnabet18"]
 
 [ext_resource type="Texture2D" uid="uid://ciih4ud7t4nob" path="res://Assets/Villagers/3 Man/Man_death.png" id="1_gamp4"]
 [ext_resource type="Texture2D" uid="uid://xcsyp202dtnx" path="res://Assets/Villagers/3 Man/Man_attack.png" id="1_o6q5p"]
@@ -177,6 +177,9 @@ size = Vector2(29, 23)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4avoo"]
 size = Vector2(21, 8)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_asfpq"]
+size = Vector2(305, 23)
+
 [node name="human_man" type="CharacterBody2D"]
 script = ExtResource("1_pep0m")
 speed = 80.0
@@ -217,6 +220,16 @@ target_position = Vector2(23, 0)
 position = Vector2(0, 6)
 target_position = Vector2(-22, 0)
 
+[node name="agro_area" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="collision" type="CollisionShape2D" parent="agro_area"]
+position = Vector2(4.5, 12.5)
+shape = SubResource("RectangleShape2D_asfpq")
+debug_color = Color(0.262683, 0.783178, 7.70092e-07, 0.419608)
+
 [connection signal="body_entered" from="attack_area" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="attack_area" to="." method="_on_attack_area_body_exited"]
 [connection signal="body_entered" from="hurt_area" to="." method="_on_hurt_area_body_entered"]
+[connection signal="body_entered" from="agro_area" to="." method="_on_agro_area_body_entered"]
+[connection signal="body_exited" from="agro_area" to="." method="_on_agro_area_body_exited"]
