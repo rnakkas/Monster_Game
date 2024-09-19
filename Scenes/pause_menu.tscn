@@ -1,85 +1,90 @@
-[gd_scene load_steps=3 format=3 uid="uid://gkrug01euw6k"]
+[gd_scene load_steps=3 format=3 uid="uid://cve7aevrhfvbl"]
 
 [ext_resource type="FontFile" uid="uid://dyyk5yqut7yx3" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="1_ijr0q"]
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_yeo84"]
 
 [node name="pause_menu" type="CanvasLayer"]
-process_mode = 2
 script = ExtResource("1_yeo84")
 
-[node name="Panel" type="Panel" parent="."]
-offset_right = 1664.0
-offset_bottom = 984.0
+[node name="overlay" type="Panel" parent="."]
+offset_right = 1616.0
+offset_bottom = 912.0
 
 [node name="resume_button" type="Button" parent="."]
-offset_left = 696.0
+offset_left = 640.0
 offset_top = 128.0
-offset_right = 912.0
+offset_right = 960.0
 offset_bottom = 256.0
 theme_override_fonts/font = ExtResource("1_ijr0q")
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 20
 text = "RESUME"
 
 [node name="restart_button" type="Button" parent="."]
-offset_left = 696.0
-offset_top = 400.0
-offset_right = 912.0
-offset_bottom = 528.0
+offset_left = 640.0
+offset_top = 320.0
+offset_right = 960.0
+offset_bottom = 448.0
 theme_override_fonts/font = ExtResource("1_ijr0q")
-theme_override_font_sizes/font_size = 27
-text = "RESTART"
-
-[node name="quit_button" type="Button" parent="."]
-offset_left = 696.0
-offset_top = 536.0
-offset_right = 912.0
-offset_bottom = 664.0
-theme_override_fonts/font = ExtResource("1_ijr0q")
-theme_override_font_sizes/font_size = 27
-text = "QUIT"
+theme_override_font_sizes/font_size = 20
+text = "RESTART LEVEL"
 
 [node name="main_menu_button" type="Button" parent="."]
-offset_left = 696.0
-offset_top = 264.0
-offset_right = 912.0
-offset_bottom = 392.0
+offset_left = 640.0
+offset_top = 512.0
+offset_right = 960.0
+offset_bottom = 640.0
 theme_override_fonts/font = ExtResource("1_ijr0q")
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 22
 text = "MAIN MENU"
 
-[node name="pause_label_1" type="Label" parent="."]
-offset_left = 520.0
-offset_top = 192.0
-offset_right = 590.0
-offset_bottom = 592.0
-theme_override_colors/font_color = Color(1, 0.923881, 0.910825, 1)
-theme_override_colors/font_shadow_color = Color(1, 0.124572, 0.0864943, 1)
+[node name="quit_button" type="Button" parent="."]
+offset_left = 640.0
+offset_top = 704.0
+offset_right = 960.0
+offset_bottom = 832.0
 theme_override_fonts/font = ExtResource("1_ijr0q")
-theme_override_font_sizes/font_size = 62
+theme_override_font_sizes/font_size = 22
+text = "QUIT"
+
+[node name="paused_label1" type="Label" parent="."]
+offset_left = 448.0
+offset_top = 125.0
+offset_right = 509.0
+offset_bottom = 837.0
+theme_override_fonts/font = ExtResource("1_ijr0q")
+theme_override_font_sizes/font_size = 61
 text = "P
+
 A
+
 U
+
 S
+
 E
+
 D"
 
-[node name="pause_label_2" type="Label" parent="."]
-offset_left = 1024.0
-offset_top = 192.0
-offset_right = 1094.0
-offset_bottom = 592.0
-theme_override_colors/font_color = Color(1, 0.923881, 0.910825, 1)
-theme_override_colors/font_shadow_color = Color(1, 0.124572, 0.0864943, 1)
+[node name="paused_label2" type="Label" parent="."]
+offset_left = 1096.0
+offset_top = 125.0
+offset_right = 1157.0
+offset_bottom = 837.0
 theme_override_fonts/font = ExtResource("1_ijr0q")
-theme_override_font_sizes/font_size = 62
+theme_override_font_sizes/font_size = 61
 text = "P
+
 A
+
 U
+
 S
+
 E
+
 D"
 
 [connection signal="pressed" from="resume_button" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="restart_button" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="main_menu_button" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]

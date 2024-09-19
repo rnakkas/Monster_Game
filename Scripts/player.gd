@@ -126,6 +126,6 @@ func _pause_game() -> void:
 	pause_menu._paused()
 
 func _on_feet_area_entered(area):
-	if area.name == "enemy_headstomp_area":
+	if area.name == "hurt_area":
 		print("headstomp")
 		_set_state(STATE.HEADSTOMP)

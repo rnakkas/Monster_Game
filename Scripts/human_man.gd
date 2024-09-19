@@ -3,23 +3,23 @@ extends CharacterBody2D
 @onready var animation := $AnimatedSprite2D
 @onready var raycast_right := $raycast_right
 @onready var raycast_left := $raycast_left
-@onready var enemy_headstomp_area = $enemy_headstomp_area
+@onready var attack_area = $attack_area
 
-@export var speed: float = 60.0
+@export var speed: float = 30.0
 @export var gravity: float = 980.0
 @export var health: float = 2.0
 
 var direction: int = 1
+var hurt_status: bool
+var attack_status: bool
 
 enum STATE {WALK, HURT, DEATH, ATTACK}
 var current_state: STATE
 
 func _set_state(new_state: STATE) -> void:
 	match current_state:
-		STATE.HURT, STATE.ATTACK:
+		STATE.HURT:
 			await animation.animation_finished
-	#if current_state == STATE.HURT:
-		#await animation.animation_finished
 	_exit_state()
 	current_state = new_state
 	_enter_state()
@@ -29,6 +29,7 @@ func _exit_state() -> void:
 		STATE.WALK:
 			pass
 		STATE.HURT:
+			hurt_status = false
 			pass
 		STATE.ATTACK:
 			pass
@@ -60,6 +61,11 @@ func _update_state(delta: float) -> void:
 				animation.flip_h = true
 			position.x += speed * delta * direction
 			
+			if attack_status: # When player enters attack area
+				_set_state(STATE.ATTACK)
+			elif hurt_status: # When player jumps on head
+				_set_state(STATE.HURT)
+			
 			##TODO: if player enters area, set state to attack
 		
 		STATE.HURT:
@@ -67,11 +73,12 @@ func _update_state(delta: float) -> void:
 				_set_state(STATE.DEATH)
 			else:
 				_set_state(STATE.WALK)
-			
-			##TODO: if player enters area, set state to attack
 		
 		STATE.ATTACK:
-			pass
+			print(str(attack_status))
+			if !attack_status:
+				print("sdfsdf")
+				_set_state(STATE.WALK)
 			##TODO: if player exits area, set state to walk
 			
 func _physics_process(delta) -> void:
@@ -83,26 +90,26 @@ func _ready() -> void:
 func _turn_collisions_off() -> void:
 	self.set_collision_layer_value(1, 0)
 	self.set_collision_mask_value(1, 0)
-	enemy_headstomp_area.set_collision_mask_value(2, 0)
-	enemy_headstomp_area.set_collision_layer_value(1, 0)
+	attack_area.set_collision_mask_value(2, 0)
+	attack_area.set_collision_layer_value(1, 0)
 
 func _turn_collisions_on() -> void:
 	self.set_collision_layer_value(1, 1)
 	self.set_collision_mask_value(1, 1)
-	enemy_headstomp_area.set_collision_mask_value(2, 1)
-	enemy_headstomp_area.set_collision_layer_value(1, 1)
+	attack_area.set_collision_mask_value(2, 1)
+	attack_area.set_collision_layer_value(1, 1)
 
-func _on_enemy_headstomp_area_body_entered(body):
-	if body.name == "player":
-		print("feet")
-		_set_state(STATE.HURT)
-
-func _on_hurt_player_area_body_entered(body):
+func _on_attack_area_body_entered(body):
 	if body.name == "player":
 		print ("attack")
-		_set_state(STATE.ATTACK)
+		attack_status = true
 
-func _on_hurt_player_area_body_exited(body):
+func _on_attack_area_body_exited(body):
 	if body.name == "player":
 		print ("stop attack")
-		_set_state(STATE.WALK)
+		attack_status = false
+
+func _on_hurt_area_body_entered(body) -> void:
+	if body.name == "player":
+		print("feet")
+		hurt_status = true

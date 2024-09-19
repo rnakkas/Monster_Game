@@ -95,7 +95,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b4t4v")
 }],
-"loop": false,
+"loop": true,
 "name": &"attack",
 "speed": 6.0
 }, {
@@ -175,7 +175,7 @@ size = Vector2(21, 26)
 size = Vector2(29, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4avoo"]
-size = Vector2(12, 8)
+size = Vector2(21, 8)
 
 [node name="human_man" type="CharacterBody2D"]
 script = ExtResource("1_pep0m")
@@ -192,19 +192,19 @@ position = Vector2(1.5, 11)
 shape = SubResource("RectangleShape2D_x8nii")
 debug_color = Color(0.65424, 0.514237, 0.165735, 0.42)
 
-[node name="hurt_player_area" type="Area2D" parent="."]
+[node name="attack_area" type="Area2D" parent="."]
 collision_mask = 3
 
-[node name="hurt_player_box" type="CollisionShape2D" parent="hurt_player_area"]
+[node name="collision" type="CollisionShape2D" parent="attack_area"]
 position = Vector2(1.5, 12.5)
 shape = SubResource("RectangleShape2D_qr0j8")
 
-[node name="enemy_headstomp_area" type="Area2D" parent="."]
+[node name="hurt_area" type="Area2D" parent="."]
 position = Vector2(1, -7)
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_headstomp_area"]
-position = Vector2(0, 1)
+[node name="collision" type="CollisionShape2D" parent="hurt_area"]
+position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_4avoo")
 one_way_collision_margin = 0.0
 debug_color = Color(0.889986, 0.225315, 0.593741, 0.42)
@@ -217,6 +217,6 @@ target_position = Vector2(23, 0)
 position = Vector2(0, 6)
 target_position = Vector2(-22, 0)
 
-[connection signal="body_entered" from="hurt_player_area" to="." method="_on_hurt_player_area_body_entered"]
-[connection signal="body_exited" from="hurt_player_area" to="." method="_on_hurt_player_area_body_exited"]
-[connection signal="body_entered" from="enemy_headstomp_area" to="." method="_on_enemy_headstomp_area_body_entered"]
+[connection signal="body_entered" from="attack_area" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="attack_area" to="." method="_on_attack_area_body_exited"]
+[connection signal="body_entered" from="hurt_area" to="." method="_on_hurt_area_body_entered"]
