@@ -70,7 +70,7 @@ func _update_state(delta: float) -> void:
 				direction = -1
 				animation.flip_h = true
 			
-			#position.x += speed * delta * direction
+			position.x += speed * delta * direction
 			
 			if attack_status: # When player enters attack area
 				_set_state(STATE.ATTACK)
@@ -100,7 +100,8 @@ func _update_state(delta: float) -> void:
 			elif player_position.x < 0:
 				direction = -1
 				animation.flip_h = true
-			#position.x += chase_speed * delta * direction
+				
+			position.x += chase_speed * delta * direction
 			
 			if attack_status: # When player enters attack area
 				_set_state(STATE.ATTACK)

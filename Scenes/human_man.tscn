@@ -231,6 +231,7 @@ collision_mask = 2
 
 [node name="collision" type="CollisionShape2D" parent="agro_area"]
 position = Vector2(4.5, 11)
+scale = Vector2(0.795, 1)
 shape = SubResource("RectangleShape2D_asfpq")
 debug_color = Color(0.262683, 0.783178, 7.70092e-07, 0.419608)
 
