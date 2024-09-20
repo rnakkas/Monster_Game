@@ -243,19 +243,18 @@ size = Vector2(12, 12.3348)
 size = Vector2(12, 5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5j182"]
-radius = 9.0
+radius = 3.16228
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_kbkxt")
 headstomp_bounce_velocity = -210.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -25)
 sprite_frames = SubResource("SpriteFrames_rt2jk")
-animation = &"hurt"
-frame = 4
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -25)
@@ -263,7 +262,8 @@ scale = Vector2(1, 1.135)
 shape = SubResource("RectangleShape2D_s7xt7")
 
 [node name="feet" type="Area2D" parent="."]
-collision_layer = 256
+collision_layer = 2
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="feet"]
 position = Vector2(-1, -18.5)
@@ -271,11 +271,11 @@ shape = SubResource("RectangleShape2D_q8qxk")
 debug_color = Color(0.458616, 0.577011, 0.401989, 0.42)
 
 [node name="player_hurt_area" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hurt_area"]
-position = Vector2(-1, -25)
+position = Vector2(-1, -26)
 shape = SubResource("CircleShape2D_5j182")
 debug_color = Color(0.964397, 3.85046e-07, 0.493, 0.42)
 

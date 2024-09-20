@@ -70,7 +70,7 @@ func _update_state(delta: float) -> void:
 				direction = -1
 				animation.flip_h = true
 			
-			position.x += speed * delta * direction
+			#position.x += speed * delta * direction
 			
 			if attack_status: # When player enters attack area
 				_set_state(STATE.ATTACK)
@@ -100,7 +100,7 @@ func _update_state(delta: float) -> void:
 			elif player_position.x < 0:
 				direction = -1
 				animation.flip_h = true
-			position.x += chase_speed * delta * direction
+			#position.x += chase_speed * delta * direction
 			
 			if attack_status: # When player enters attack area
 				_set_state(STATE.ATTACK)
@@ -116,22 +116,24 @@ func _ready() -> void:
 	_set_state(STATE.WALK)
 
 func _turn_collisions_off() -> void:
-	self.set_collision_layer_value(1, 0)
-	self.set_collision_mask_value(1, 0)
-	enemy_attack_area.set_collision_mask_value(2, 0)
-	enemy_attack_area.set_collision_layer_value(1, 0)
-	enemy_hurt_area.set_collision_layer_value(1, 0)
-	enemy_hurt_area.set_collision_mask_value(1, 0)
-	enemy_hurt_area.set_collision_mask_value(2, 0)
+	pass
+	#self.set_collision_layer_value(1, 0)
+	#self.set_collision_mask_value(1, 0)
+	#enemy_attack_area.set_collision_mask_value(2, 0)
+	#enemy_attack_area.set_collision_layer_value(1, 0)
+	#enemy_hurt_area.set_collision_layer_value(1, 0)
+	#enemy_hurt_area.set_collision_mask_value(1, 0)
+	#enemy_hurt_area.set_collision_mask_value(2, 0)
 
 func _turn_collisions_on() -> void:
-	self.set_collision_layer_value(1, 1)
-	self.set_collision_mask_value(1, 1)
-	enemy_attack_area.set_collision_mask_value(2, 1)
-	enemy_attack_area.set_collision_layer_value(1, 1)
-	enemy_hurt_area.set_collision_layer_value(1, 1)
-	enemy_hurt_area.set_collision_mask_value(1, 1)
-	enemy_hurt_area.set_collision_mask_value(2, 1)
+	pass
+	#self.set_collision_layer_value(1, 1)
+	#self.set_collision_mask_value(1, 1)
+	#enemy_attack_area.set_collision_mask_value(2, 1)
+	#enemy_attack_area.set_collision_layer_value(1, 1)
+	#enemy_hurt_area.set_collision_layer_value(1, 1)
+	#enemy_hurt_area.set_collision_mask_value(1, 1)
+	#enemy_hurt_area.set_collision_mask_value(2, 1)
 
 func _on_enemy_attack_area_body_entered(body):
 	if body.name == "player":
@@ -148,6 +150,11 @@ func _on_enemy_hurt_area_body_entered(body) -> void:
 		print("feet")
 		hurt_status = true
 
+func _on_enemy_hurt_area_area_entered(area):
+	if area.name == "feet":
+		print("test feet")
+		hurt_status = true
+
 func _on_agro_area_body_entered(body):
 	if body.name == "player":
 		print("agro")
@@ -160,9 +167,3 @@ func _on_agro_area_body_exited(body):
 	if body.name == "player":
 		print("no agro")
 		chase_status = false
-
-	
-## TODO: get the player node get_node(path to player node)
-## TODO: get player position (player.position - body.position)
-## TODO: flip sprite depending on direction +ve or -ve to face player
-## TODO: add new speed called chase_speed for when chasing player

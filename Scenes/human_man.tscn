@@ -169,19 +169,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8nii"]
-size = Vector2(21, 26)
+size = Vector2(23, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qr0j8"]
-size = Vector2(37, 23)
+size = Vector2(37, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4avoo"]
-size = Vector2(21, 8)
+size = Vector2(11, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asfpq"]
-size = Vector2(305, 23)
+size = Vector2(305, 26)
 
 [node name="human_man" type="CharacterBody2D"]
 position = Vector2(0, -24)
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_pep0m")
 speed = 80.0
 
@@ -197,18 +199,20 @@ shape = SubResource("RectangleShape2D_x8nii")
 debug_color = Color(0.65424, 0.514237, 0.165735, 0.42)
 
 [node name="enemy_attack_area" type="Area2D" parent="."]
-collision_mask = 3
+collision_layer = 4
+collision_mask = 2
 
 [node name="collision" type="CollisionShape2D" parent="enemy_attack_area"]
-position = Vector2(1.5, 12.5)
+position = Vector2(1.5, 11)
 shape = SubResource("RectangleShape2D_qr0j8")
 
 [node name="enemy_hurt_area" type="Area2D" parent="."]
 position = Vector2(1, -7)
-collision_mask = 3
+collision_layer = 8
+collision_mask = 2
 
 [node name="collision" type="CollisionShape2D" parent="enemy_hurt_area"]
-position = Vector2(0.5, 1)
+position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_4avoo")
 one_way_collision_margin = 0.0
 debug_color = Color(0.889986, 0.225315, 0.593741, 0.42)
@@ -222,15 +226,17 @@ position = Vector2(0, 6)
 target_position = Vector2(-22, 0)
 
 [node name="agro_area" type="Area2D" parent="."]
-collision_mask = 3
+collision_layer = 16
+collision_mask = 2
 
 [node name="collision" type="CollisionShape2D" parent="agro_area"]
-position = Vector2(4.5, 12.5)
+position = Vector2(4.5, 11)
 shape = SubResource("RectangleShape2D_asfpq")
 debug_color = Color(0.262683, 0.783178, 7.70092e-07, 0.419608)
 
 [connection signal="body_entered" from="enemy_attack_area" to="." method="_on_enemy_attack_area_body_entered"]
 [connection signal="body_exited" from="enemy_attack_area" to="." method="_on_enemy_attack_area_body_exited"]
+[connection signal="area_entered" from="enemy_hurt_area" to="." method="_on_enemy_hurt_area_area_entered"]
 [connection signal="body_entered" from="enemy_hurt_area" to="." method="_on_enemy_hurt_area_body_entered"]
 [connection signal="body_entered" from="agro_area" to="." method="_on_agro_area_body_entered"]
 [connection signal="body_exited" from="agro_area" to="." method="_on_agro_area_body_exited"]

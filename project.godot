@@ -64,6 +64,14 @@ attack={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="floor_layer"
+2d_physics/layer_2="player_layer"
+2d_physics/layer_3="enemy_attack_box"
+2d_physics/layer_4="enemy_hurt_box"
+2d_physics/layer_5="enemy_agro_box"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
