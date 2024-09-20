@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://k4w7au8mhxqs"]
+[gd_scene load_steps=8 format=4 uid="uid://k4w7au8mhxqs"]
 
 [ext_resource type="Texture2D" uid="uid://52pc6unhq0um" path="res://Assets/KingsPigs/14-TileSets/Terrain (32x32).png" id="1_wye17"]
 [ext_resource type="PackedScene" uid="uid://dbv5vhnabet18" path="res://Scenes/human_man.tscn" id="2_iigwm"]
 [ext_resource type="PackedScene" uid="uid://doyu4s23k25h6" path="res://Scenes/player.tscn" id="3_1djqg"]
 [ext_resource type="PackedScene" uid="uid://cve7aevrhfvbl" path="res://Scenes/pause_menu_1.tscn" id="4_704xx"]
+[ext_resource type="PackedScene" uid="uid://7gf820v153gn" path="res://Scenes/game_over.tscn" id="5_xn46c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1vkt2"]
 texture = ExtResource("1_wye17")
@@ -443,4 +444,7 @@ limit_bottom = 800
 position_smoothing_enabled = true
 
 [node name="pause_menu_1" parent="player" instance=ExtResource("4_704xx")]
+visible = false
+
+[node name="game_over" parent="player" instance=ExtResource("5_xn46c")]
 visible = false
