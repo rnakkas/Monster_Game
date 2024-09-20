@@ -3,7 +3,8 @@ extends CharacterBody2D
 @onready var animation := $AnimatedSprite2D
 @onready var raycast_right := $raycast_right
 @onready var raycast_left := $raycast_left
-@onready var attack_area = $attack_area
+@onready var enemy_attack_area = $enemy_attack_area
+@onready var enemy_hurt_area = $enemy_hurt_area
 
 @export var speed: float = 30.0
 @export var chase_speed: float = 130.0
@@ -93,7 +94,6 @@ func _update_state(delta: float) -> void:
 				_set_state(STATE.CHASE)
 		
 		STATE.CHASE:
-			
 			if player_position.x > 0:
 				direction = 1
 				animation.flip_h = false
@@ -118,26 +118,32 @@ func _ready() -> void:
 func _turn_collisions_off() -> void:
 	self.set_collision_layer_value(1, 0)
 	self.set_collision_mask_value(1, 0)
-	attack_area.set_collision_mask_value(2, 0)
-	attack_area.set_collision_layer_value(1, 0)
+	enemy_attack_area.set_collision_mask_value(2, 0)
+	enemy_attack_area.set_collision_layer_value(1, 0)
+	enemy_hurt_area.set_collision_layer_value(1, 0)
+	enemy_hurt_area.set_collision_mask_value(1, 0)
+	enemy_hurt_area.set_collision_mask_value(2, 0)
 
 func _turn_collisions_on() -> void:
 	self.set_collision_layer_value(1, 1)
 	self.set_collision_mask_value(1, 1)
-	attack_area.set_collision_mask_value(2, 1)
-	attack_area.set_collision_layer_value(1, 1)
+	enemy_attack_area.set_collision_mask_value(2, 1)
+	enemy_attack_area.set_collision_layer_value(1, 1)
+	enemy_hurt_area.set_collision_layer_value(1, 1)
+	enemy_hurt_area.set_collision_mask_value(1, 1)
+	enemy_hurt_area.set_collision_mask_value(2, 1)
 
-func _on_attack_area_body_entered(body):
+func _on_enemy_attack_area_body_entered(body):
 	if body.name == "player":
 		print ("attack")
 		attack_status = true
 
-func _on_attack_area_body_exited(body):
+func _on_enemy_attack_area_body_exited(body):
 	if body.name == "player":
 		print ("stop attack")
 		attack_status = false
 
-func _on_hurt_area_body_entered(body) -> void:
+func _on_enemy_hurt_area_body_entered(body) -> void:
 	if body.name == "player":
 		print("feet")
 		hurt_status = true

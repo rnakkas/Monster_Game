@@ -270,13 +270,15 @@ position = Vector2(-1, -18.5)
 shape = SubResource("RectangleShape2D_q8qxk")
 debug_color = Color(0.458616, 0.577011, 0.401989, 0.42)
 
-[node name="hurt_area" type="Area2D" parent="."]
+[node name="player_hurt_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hurt_area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hurt_area"]
 position = Vector2(-1, -25)
 shape = SubResource("CircleShape2D_5j182")
 debug_color = Color(0.964397, 3.85046e-07, 0.493, 0.42)
 
 [connection signal="area_entered" from="feet" to="." method="_on_feet_area_entered"]
 [connection signal="body_entered" from="feet" to="." method="_on_area_2d_body_entered"]
-[connection signal="area_entered" from="hurt_area" to="." method="_on_hurt_area_area_entered"]
+[connection signal="area_entered" from="player_hurt_area" to="." method="_on_player_hurt_area_area_entered"]
