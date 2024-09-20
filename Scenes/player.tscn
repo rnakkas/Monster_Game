@@ -242,20 +242,19 @@ size = Vector2(12, 12.3348)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q8qxk"]
 size = Vector2(12, 5)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5j182"]
-radius = 9.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eo8et"]
+size = Vector2(12, 14)
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_kbkxt")
 headstomp_bounce_velocity = -210.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -25)
 sprite_frames = SubResource("SpriteFrames_rt2jk")
-animation = &"hurt"
-frame = 4
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -25)
@@ -263,20 +262,23 @@ scale = Vector2(1, 1.135)
 shape = SubResource("RectangleShape2D_s7xt7")
 
 [node name="feet" type="Area2D" parent="."]
-collision_layer = 256
+collision_layer = 2
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="feet"]
 position = Vector2(-1, -18.5)
 shape = SubResource("RectangleShape2D_q8qxk")
 debug_color = Color(0.458616, 0.577011, 0.401989, 0.42)
 
-[node name="hurt_area" type="Area2D" parent="."]
+[node name="player_hurt_area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hurt_area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hurt_area"]
 position = Vector2(-1, -25)
-shape = SubResource("CircleShape2D_5j182")
+shape = SubResource("RectangleShape2D_eo8et")
 debug_color = Color(0.964397, 3.85046e-07, 0.493, 0.42)
 
 [connection signal="area_entered" from="feet" to="." method="_on_feet_area_entered"]
 [connection signal="body_entered" from="feet" to="." method="_on_area_2d_body_entered"]
-[connection signal="area_entered" from="hurt_area" to="." method="_on_hurt_area_area_entered"]
+[connection signal="area_entered" from="player_hurt_area" to="." method="_on_player_hurt_area_area_entered"]

@@ -135,11 +135,11 @@ func _pause_game() -> void:
 	pause_menu_1._paused()
 
 func _on_feet_area_entered(area):
-	if area.name == "hurt_area":
+	if area.name == "enemy_hurt_area":
 		print("headstomp")
 		_set_state(STATE.HEADSTOMP)
 
-func _on_hurt_area_area_entered(area):
-	if area.name == "attack_area":
+func _on_player_hurt_area_area_entered(area):
+	if area.name == "enemy_attack_area":
 		print("hit!")
 		hit_status = true

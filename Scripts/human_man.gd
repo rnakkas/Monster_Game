@@ -3,7 +3,8 @@ extends CharacterBody2D
 @onready var animation := $AnimatedSprite2D
 @onready var raycast_right := $raycast_right
 @onready var raycast_left := $raycast_left
-@onready var attack_area = $attack_area
+@onready var enemy_attack_area = $enemy_attack_area
+@onready var enemy_hurt_area = $enemy_hurt_area
 
 @export var speed: float = 30.0
 @export var chase_speed: float = 130.0
@@ -93,13 +94,13 @@ func _update_state(delta: float) -> void:
 				_set_state(STATE.CHASE)
 		
 		STATE.CHASE:
-			
 			if player_position.x > 0:
 				direction = 1
 				animation.flip_h = false
 			elif player_position.x < 0:
 				direction = -1
 				animation.flip_h = true
+				
 			position.x += chase_speed * delta * direction
 			
 			if attack_status: # When player enters attack area
@@ -116,30 +117,31 @@ func _ready() -> void:
 	_set_state(STATE.WALK)
 
 func _turn_collisions_off() -> void:
-	self.set_collision_layer_value(1, 0)
-	self.set_collision_mask_value(1, 0)
-	attack_area.set_collision_mask_value(2, 0)
-	attack_area.set_collision_layer_value(1, 0)
+	self.set_collision_layer_value(3, 0)
+	enemy_hurt_area.set_collision_layer_value(4,0)
 
 func _turn_collisions_on() -> void:
-	self.set_collision_layer_value(1, 1)
-	self.set_collision_mask_value(1, 1)
-	attack_area.set_collision_mask_value(2, 1)
-	attack_area.set_collision_layer_value(1, 1)
+	self.set_collision_layer_value(3, 1)
+	enemy_hurt_area.set_collision_layer_value(4,1)
 
-func _on_attack_area_body_entered(body):
+func _on_enemy_attack_area_body_entered(body):
 	if body.name == "player":
 		print ("attack")
 		attack_status = true
 
-func _on_attack_area_body_exited(body):
+func _on_enemy_attack_area_body_exited(body):
 	if body.name == "player":
 		print ("stop attack")
 		attack_status = false
 
-func _on_hurt_area_body_entered(body) -> void:
+func _on_enemy_hurt_area_body_entered(body) -> void:
 	if body.name == "player":
 		print("feet")
+		hurt_status = true
+
+func _on_enemy_hurt_area_area_entered(area):
+	if area.name == "feet":
+		print("test feet")
 		hurt_status = true
 
 func _on_agro_area_body_entered(body):
@@ -154,9 +156,3 @@ func _on_agro_area_body_exited(body):
 	if body.name == "player":
 		print("no agro")
 		chase_status = false
-
-	
-## TODO: get the player node get_node(path to player node)
-## TODO: get player position (player.position - body.position)
-## TODO: flip sprite depending on direction +ve or -ve to face player
-## TODO: add new speed called chase_speed for when chasing player
