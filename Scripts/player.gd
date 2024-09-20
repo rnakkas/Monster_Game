@@ -5,10 +5,11 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY: float = -350.0
 @export var headstomp_bounce_velocity: float = -90.0
 @export var gravity: float = 980
-@export var hp: float = 3.0
+@export var health: float = 3.0
 
 @onready var animation = $AnimatedSprite2D
 @onready var pause_menu_1 = $pause_menu_1
+@onready var game_over = $game_over
 
 enum STATE {IDLE, RUN, JUMP, FALL, HEADSTOMP, HURT, DEATH}
 var current_state : STATE
@@ -58,7 +59,11 @@ func _enter_state() -> void:
 			velocity.y = headstomp_bounce_velocity
 			animation.play("jump")
 		STATE.HURT:
+			health -= 1.0 
 			animation.play("hurt")
+		STATE.DEATH:
+			animation.play("death")
+			game_over._game_over()
 
 func _update_state(delta: float) -> void:
 	direction = Input.get_vector("move_left", "move_right", "move_up","move_down")
@@ -139,7 +144,7 @@ func _update_state(delta: float) -> void:
 				_set_state(STATE.JUMP)
 			elif !hit_status && !is_on_floor():
 				_set_state(STATE.FALL)
-			elif hp <= 0:
+			elif health <= 0:
 				_set_state(STATE.DEATH)
 			
 			move_and_slide()
