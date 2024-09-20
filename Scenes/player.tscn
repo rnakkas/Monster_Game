@@ -242,8 +242,8 @@ size = Vector2(12, 12.3348)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q8qxk"]
 size = Vector2(12, 5)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5j182"]
-radius = 3.16228
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eo8et"]
+size = Vector2(12, 14)
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
@@ -272,11 +272,11 @@ debug_color = Color(0.458616, 0.577011, 0.401989, 0.42)
 
 [node name="player_hurt_area" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hurt_area"]
-position = Vector2(-1, -26)
-shape = SubResource("CircleShape2D_5j182")
+position = Vector2(-1, -25)
+shape = SubResource("RectangleShape2D_eo8et")
 debug_color = Color(0.964397, 3.85046e-07, 0.493, 0.42)
 
 [connection signal="area_entered" from="feet" to="." method="_on_feet_area_entered"]

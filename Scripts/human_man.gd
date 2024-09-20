@@ -116,24 +116,12 @@ func _ready() -> void:
 	_set_state(STATE.WALK)
 
 func _turn_collisions_off() -> void:
-	pass
-	#self.set_collision_layer_value(1, 0)
-	#self.set_collision_mask_value(1, 0)
-	#enemy_attack_area.set_collision_mask_value(2, 0)
-	#enemy_attack_area.set_collision_layer_value(1, 0)
-	#enemy_hurt_area.set_collision_layer_value(1, 0)
-	#enemy_hurt_area.set_collision_mask_value(1, 0)
-	#enemy_hurt_area.set_collision_mask_value(2, 0)
+	self.set_collision_layer_value(3, 0)
+	enemy_hurt_area.set_collision_layer_value(4,0)
 
 func _turn_collisions_on() -> void:
-	pass
-	#self.set_collision_layer_value(1, 1)
-	#self.set_collision_mask_value(1, 1)
-	#enemy_attack_area.set_collision_mask_value(2, 1)
-	#enemy_attack_area.set_collision_layer_value(1, 1)
-	#enemy_hurt_area.set_collision_layer_value(1, 1)
-	#enemy_hurt_area.set_collision_mask_value(1, 1)
-	#enemy_hurt_area.set_collision_mask_value(2, 1)
+	self.set_collision_layer_value(3, 1)
+	enemy_hurt_area.set_collision_layer_value(4,1)
 
 func _on_enemy_attack_area_body_entered(body):
 	if body.name == "player":
