@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var SPEED: float = 200.0
-@export var knockback_speed: float = 20
+@export var knockback_speed: float = 100
 @export var JUMP_VELOCITY: float = -350.0
 @export var headstomp_bounce_velocity: float = -90.0
 @export var gravity: float = 980
@@ -17,6 +17,7 @@ var hit_status: bool
 var direction: Vector2 = Vector2.ZERO
 var enemy: Node
 var hit_direction: Vector2
+var hit_velocity: Vector2
 
 func _set_state(new_state: STATE) -> void:
 	if current_state == new_state:
@@ -57,12 +58,6 @@ func _enter_state() -> void:
 			velocity.y = headstomp_bounce_velocity
 			animation.play("jump")
 		STATE.HURT:
-			if hit_direction.x > 0:
-				position.x -= knockback_speed
-			
-			if hit_direction.x < 0:
-				position.x += knockback_speed
-				
 			animation.play("hurt")
 
 func _update_state(delta: float) -> void:
@@ -133,6 +128,7 @@ func _update_state(delta: float) -> void:
 			move_and_slide()
 			
 		STATE.HURT:
+			velocity.x = -hit_direction.x * knockback_speed
 			_flip_sprite()
 			
 			if !hit_status:
@@ -145,11 +141,13 @@ func _update_state(delta: float) -> void:
 				_set_state(STATE.FALL)
 			elif hp <= 0:
 				_set_state(STATE.DEATH)
+			
+			move_and_slide()
 	
 func _flip_sprite() -> void:
-	if velocity.x > 0:
+	if velocity.x > 0 && current_state != STATE.HURT:
 		animation.flip_h = false
-	elif velocity.x < 0:
+	elif velocity.x < 0 && current_state != STATE.HURT:
 		animation.flip_h = true
 	elif hit_direction.x < 0:
 		animation.flip_h = true
@@ -174,7 +172,7 @@ func _on_player_hurt_area_area_entered(area):
 	if area.name == "enemy_attack_area":
 		print("hit!")
 		enemy = get_node("../human_man")
-		hit_direction = (enemy.position - self.position)
+		hit_direction = (enemy.position - self.position).normalized()
 		hit_status = true
 
 func _on_player_hurt_area_area_exited(area):
