@@ -14,6 +14,8 @@ var direction: int = 1
 var hurt_status: bool
 var attack_status: bool
 var chase_status: bool
+var player_position: Vector2
+var player: Node
 
 enum STATE {WALK, HURT, DEATH, ATTACK, CHASE}
 var current_state: STATE
@@ -91,10 +93,11 @@ func _update_state(delta: float) -> void:
 				_set_state(STATE.CHASE)
 		
 		STATE.CHASE:
-			if raycast_left.is_colliding():
+			
+			if player_position.x > 0:
 				direction = 1
 				animation.flip_h = false
-			elif raycast_right.is_colliding():
+			elif player_position.x < 0:
 				direction = -1
 				animation.flip_h = true
 			position.x += chase_speed * delta * direction
@@ -142,6 +145,9 @@ func _on_hurt_area_body_entered(body) -> void:
 func _on_agro_area_body_entered(body):
 	if body.name == "player":
 		print("agro")
+		# get player position
+		player = get_node("../player")
+		player_position = (player.position - self.position)
 		chase_status = true
 
 func _on_agro_area_body_exited(body):
@@ -149,6 +155,7 @@ func _on_agro_area_body_exited(body):
 		print("no agro")
 		chase_status = false
 
+	
 ## TODO: get the player node get_node(path to player node)
 ## TODO: get player position (player.position - body.position)
 ## TODO: flip sprite depending on direction +ve or -ve to face player
