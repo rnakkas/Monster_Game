@@ -23,7 +23,7 @@ var current_state: STATE
 
 func _set_state(new_state: STATE) -> void:
 	match current_state:
-		STATE.HURT:
+		STATE.HURT, STATE.ATTACK:
 			await animation.animation_finished
 	_exit_state()
 	current_state = new_state
@@ -94,10 +94,10 @@ func _update_state(delta: float) -> void:
 				_set_state(STATE.CHASE)
 		
 		STATE.CHASE:
-			if player_position.x > 0:
+			if player_position.x > 0: # when attacked from the right
 				direction = 1
 				animation.flip_h = false
-			elif player_position.x < 0:
+			elif player_position.x < 0: # when attacked from the left
 				direction = -1
 				animation.flip_h = true
 				
