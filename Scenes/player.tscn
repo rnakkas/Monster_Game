@@ -254,7 +254,7 @@ headstomp_bounce_velocity = -210.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -25)
 sprite_frames = SubResource("SpriteFrames_rt2jk")
-animation = &"hurt"
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -25)

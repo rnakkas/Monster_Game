@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var SPEED: float = 200.0
-@export var knockback_speed: float = 100
+@export var knockback_speed: float = 180
 @export var JUMP_VELOCITY: float = -350.0
 @export var headstomp_bounce_velocity: float = -90.0
 @export var gravity: float = 980
@@ -25,6 +25,10 @@ func _set_state(new_state: STATE) -> void:
 		return
 	if current_state == STATE.HURT:
 		await animation.animation_finished
+	if current_state == STATE.DEATH: # When player dies, show gameover and exit out of loop
+		await animation.animation_finished
+		game_over._game_over()
+		return
 	_exit_state()
 	current_state = new_state
 	_enter_state()
@@ -63,7 +67,6 @@ func _enter_state() -> void:
 			animation.play("hurt")
 		STATE.DEATH:
 			animation.play("death")
-			game_over._game_over()
 
 func _update_state(delta: float) -> void:
 	direction = Input.get_vector("move_left", "move_right", "move_up","move_down")
@@ -126,6 +129,10 @@ func _update_state(delta: float) -> void:
 		STATE.HEADSTOMP:
 			velocity.x = direction.x * SPEED
 			_flip_sprite()
+			
+			if Input.is_action_just_pressed("pause"):
+				_pause_game()
+			
 			if !is_on_floor():
 				velocity.y += gravity * delta
 				if velocity.y > 0:
@@ -135,6 +142,9 @@ func _update_state(delta: float) -> void:
 		STATE.HURT:
 			velocity.x = -hit_direction.x * knockback_speed
 			_flip_sprite()
+			
+			if Input.is_action_just_pressed("pause"):
+				_pause_game()
 			
 			if !hit_status:
 				_set_state(STATE.IDLE)
