@@ -119,10 +119,14 @@ func _ready() -> void:
 func _turn_collisions_off() -> void:
 	self.set_collision_layer_value(3, 0)
 	enemy_hurt_area.set_collision_layer_value(4,0)
+	enemy_attack_area.set_collision_layer_value(3, 0)
+	enemy_attack_area.set_collision_mask_value(2, 0)
 
 func _turn_collisions_on() -> void:
 	self.set_collision_layer_value(3, 1)
 	enemy_hurt_area.set_collision_layer_value(4,1)
+	enemy_attack_area.set_collision_layer_value(3, 1)
+	enemy_attack_area.set_collision_mask_value(2, 1)
 
 func _on_enemy_attack_area_body_entered(body):
 	if body.name == "player":
