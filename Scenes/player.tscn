@@ -1,8 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://doyu4s23k25h6"]
+[gd_scene load_steps=35 format=3 uid="uid://doyu4s23k25h6"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_kbkxt"]
 [ext_resource type="Texture2D" uid="uid://s4od1a5u815j" path="res://Assets/Monsters/monster-4-sheet.png" id="3_8ag0s"]
 [ext_resource type="Texture2D" uid="uid://dqvjklsj45sc2" path="res://Assets/Monsters/monster-3-sheet.png" id="3_vfdqw"]
+[ext_resource type="PackedScene" uid="uid://cve7aevrhfvbl" path="res://Scenes/pause_menu_1.tscn" id="4_362fj"]
+[ext_resource type="PackedScene" uid="uid://7gf820v153gn" path="res://Scenes/game_over.tscn" id="5_c0xj1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_side7"]
 atlas = ExtResource("3_8ag0s")
@@ -278,6 +280,12 @@ collision_mask = 4
 position = Vector2(-1, -25)
 shape = SubResource("RectangleShape2D_eo8et")
 debug_color = Color(0.964397, 3.85046e-07, 0.493, 0.42)
+
+[node name="pause_menu_1" parent="." instance=ExtResource("4_362fj")]
+visible = false
+
+[node name="game_over" parent="." instance=ExtResource("5_c0xj1")]
+visible = false
 
 [connection signal="area_entered" from="feet" to="." method="_on_feet_area_entered"]
 [connection signal="body_entered" from="feet" to="." method="_on_area_2d_body_entered"]
