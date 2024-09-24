@@ -443,8 +443,8 @@ limit_left = 0
 limit_bottom = 800
 position_smoothing_enabled = true
 
-[node name="pause_menu_1" parent="player" instance=ExtResource("4_704xx")]
+[node name="pause_menu_2" parent="player" instance=ExtResource("4_704xx")]
 visible = false
 
-[node name="game_over" parent="player" instance=ExtResource("5_xn46c")]
+[node name="game_over2" parent="player" instance=ExtResource("5_xn46c")]
 visible = false
