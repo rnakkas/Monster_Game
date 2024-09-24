@@ -16,7 +16,7 @@ var hurt_status: bool
 var attack_status: bool
 var chase_status: bool
 var player_position: Vector2
-var player: Node
+var player_path : String = "../../player/player"
 
 enum STATE {WALK, HURT, DEATH, ATTACK, CHASE}
 var current_state: STATE
@@ -152,7 +152,7 @@ func _on_agro_area_body_entered(body):
 	if body.name == "player":
 		print("agro")
 		# get player position
-		player = get_node("../player")
+		var player = get_node(player_path)
 		player_position = (player.position - self.position)
 		chase_status = true
 

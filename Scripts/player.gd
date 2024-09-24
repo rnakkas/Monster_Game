@@ -186,7 +186,9 @@ func _on_feet_area_entered(area):
 func _on_player_hurt_area_area_entered(area):
 	if area.name == "enemy_attack_area":
 		print("hit!")
-		enemy = get_node("../human_man")
+		# Get the parent node of the enemy attack area, so that it's independent of enemy node name
+		# Before was using get_node("../enemies/human_male") which fucking sucked!
+		enemy = area.get_parent() 
 		hit_direction = (enemy.position - self.position).normalized()
 		hit_status = true
 
