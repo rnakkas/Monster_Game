@@ -220,10 +220,14 @@ debug_color = Color(0.889986, 0.225315, 0.593741, 0.42)
 [node name="raycast_right" type="RayCast2D" parent="."]
 position = Vector2(0, 6)
 target_position = Vector2(23, 0)
+collision_mask = 33
+collide_with_areas = true
 
 [node name="raycast_left" type="RayCast2D" parent="."]
 position = Vector2(0, 6)
 target_position = Vector2(-22, 0)
+collision_mask = 33
+collide_with_areas = true
 
 [node name="agro_area" type="Area2D" parent="."]
 collision_layer = 16
