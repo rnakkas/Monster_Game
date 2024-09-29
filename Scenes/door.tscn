@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://du6u38o5k27oi"]
+
+[ext_resource type="Texture2D" uid="uid://dbonv4llrgnnr" path="res://Assets/KingsPigs/11-Door/Idle.png" id="1_iop8r"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="1_tpahx"]
+[ext_resource type="Texture2D" uid="uid://c6fppkiet47fn" path="res://Assets/KingsPigs/11-Door/Opening (46x56).png" id="2_k75df"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkman"]
+atlas = ExtResource("1_iop8r")
+region = Rect2(0, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2j7l"]
+atlas = ExtResource("2_k75df")
+region = Rect2(0, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg2ix"]
+atlas = ExtResource("2_k75df")
+region = Rect2(46, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42kpf"]
+atlas = ExtResource("2_k75df")
+region = Rect2(92, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mylhm"]
+atlas = ExtResource("2_k75df")
+region = Rect2(138, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmdp8"]
+atlas = ExtResource("2_k75df")
+region = Rect2(184, 0, 46, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mlbfa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkman")
+}],
+"loop": false,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2j7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mg2ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42kpf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mylhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmdp8")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uaawh"]
+size = Vector2(49, 58)
+
+[node name="door" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_tpahx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mlbfa")
+animation = &"open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_uaawh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

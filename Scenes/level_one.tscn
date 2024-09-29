@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://du5hnunlfr86h"]
+[gd_scene load_steps=18 format=4 uid="uid://du5hnunlfr86h"]
 
 [ext_resource type="Texture2D" uid="uid://52pc6unhq0um" path="res://Assets/KingsPigs/14-TileSets/Terrain (32x32).png" id="1_pq3q4"]
 [ext_resource type="Texture2D" uid="uid://bmhxjjjtsh6gm" path="res://Assets/KingsPigs/14-TileSets/Decorations (32x32).png" id="2_s0okr"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dbv5vhnabet18" path="res://Scenes/human_man.tscn" id="5_myj7h"]
 [ext_resource type="PackedScene" uid="uid://c0biwe6mxpyry" path="res://Scenes/chest.tscn" id="5_t5py3"]
 [ext_resource type="PackedScene" uid="uid://b1eecjfd1s3ls" path="res://Scenes/key.tscn" id="6_nw6m3"]
+[ext_resource type="PackedScene" uid="uid://du6u38o5k27oi" path="res://Scenes/door.tscn" id="9_ox528"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vy2xm"]
 texture = ExtResource("1_pq3q4")
@@ -1187,6 +1188,14 @@ tile_set = SubResource("TileSet_gpmkm")
 
 [node name="game_manager" parent="." instance=ExtResource("4_0gnbt")]
 unique_name_in_owner = true
+
+[node name="door" parent="." instance=ExtResource("9_ox528")]
+position = Vector2(569, 141)
+scale = Vector2(1.79, 1.79)
+
+[node name="door2" parent="." instance=ExtResource("9_ox528")]
+position = Vector2(189, 447)
+scale = Vector2(1.79, 1.79)
 
 [node name="chests" type="Node2D" parent="."]
 
