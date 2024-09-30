@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5o20qybm1f5m"]
+
+[ext_resource type="Script" path="res://Scripts/textbox.gd" id="1_6qgwp"]
+[ext_resource type="FontFile" uid="uid://dh4dh8q30qsi5" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="2_g8v0k"]
+[ext_resource type="Texture2D" uid="uid://dhpc17w6nf1du" path="res://Assets/text_box_2.png" id="2_rb5o8"]
+
+[node name="textbox" type="MarginContainer"]
+offset_right = 24.0
+offset_bottom = 24.0
+script = ExtResource("1_6qgwp")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_rb5o8")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 12
+patch_margin_top = 10
+patch_margin_right = 12
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_g8v0k")
+vertical_alignment = 1
+
+[node name="letterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="letterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]

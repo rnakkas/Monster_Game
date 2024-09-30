@@ -178,7 +178,7 @@ size = Vector2(37, 26)
 size = Vector2(11, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_asfpq"]
-size = Vector2(305, 26)
+size = Vector2(177.358, 26)
 
 [node name="human_man" type="CharacterBody2D"]
 position = Vector2(0, -24)
@@ -234,7 +234,7 @@ collision_layer = 16
 collision_mask = 2
 
 [node name="collision" type="CollisionShape2D" parent="agro_area"]
-position = Vector2(4.5, 11)
+position = Vector2(2.5, 11)
 scale = Vector2(0.795, 1)
 shape = SubResource("RectangleShape2D_asfpq")
 debug_color = Color(0.262683, 0.783178, 7.70092e-07, 0.419608)

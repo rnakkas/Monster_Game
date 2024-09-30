@@ -9,7 +9,7 @@ extends CharacterBody2D
 @export var speed: float = 30.0
 @export var chase_speed: float = 130.0
 @export var gravity: float = 980.0
-@export var health: float = 2.0
+@export var health: float = 1.0
 
 var direction: int = 1
 var hurt_status: bool
@@ -100,8 +100,9 @@ func _update_state(delta: float) -> void:
 			elif player_position.x < 0: # when attacked from the left
 				direction = -1
 				animation.flip_h = true
-				
-			position.x += chase_speed * delta * direction
+			
+			if !raycast_left.is_colliding() && !raycast_right.is_colliding():	
+				position.x += chase_speed * delta * direction
 			
 			if attack_status: # When player enters attack area
 				_set_state(STATE.ATTACK)

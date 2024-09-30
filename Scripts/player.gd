@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY: float = -350.0
 @export var headstomp_bounce_velocity: float = -90.0
 @export var gravity: float = 980
-@export var health: float = 3.0
+@export var health: float = 1.0
 
 @onready var animation = $AnimatedSprite2D
 @onready var pause_menu_1 = $pause_menu_1
@@ -146,14 +146,14 @@ func _update_state(delta: float) -> void:
 			if Input.is_action_just_pressed("pause"):
 				_pause_game()
 			
-			if !hit_status:
-				_set_state(STATE.IDLE)
-			elif !hit_status && (Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right")):
-				_set_state(STATE.RUN)
-			elif !hit_status && Input.is_action_just_pressed("jump"):
-				_set_state(STATE.JUMP)
-			elif !hit_status && !is_on_floor():
-				_set_state(STATE.FALL)
+			#if !hit_status:
+				#_set_state(STATE.IDLE)
+			#elif !hit_status && (Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right")):
+				#_set_state(STATE.RUN)
+			#elif !hit_status && Input.is_action_just_pressed("jump"):
+				#_set_state(STATE.JUMP)
+			#elif !hit_status && !is_on_floor():
+				#_set_state(STATE.FALL)
 			elif health <= 0:
 				_set_state(STATE.DEATH)
 			

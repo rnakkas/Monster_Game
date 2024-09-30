@@ -1,7 +1,7 @@
 extends Node
 
 var has_key: bool = false
-var chest_opened: bool = true
+var chest_opened: bool = false
 
 func _update_key() -> void:
 	has_key = true
