@@ -99,5 +99,8 @@ shape = SubResource("RectangleShape2D_uaawh")
 [node name="open_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_r8bhb")
 
+[node name="open_door_timer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="open_door_timer" to="." method="_on_open_door_timer_timeout"]

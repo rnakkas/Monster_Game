@@ -1202,7 +1202,7 @@ scale = Vector2(2, 2)
 [node name="keys" type="Node2D" parent="."]
 
 [node name="key" parent="keys" instance=ExtResource("6_nw6m3")]
-position = Vector2(2930, 606)
+position = Vector2(1253, 333)
 scale = Vector2(2.5, 2.5)
 
 [node name="player" type="Node2D" parent="."]
