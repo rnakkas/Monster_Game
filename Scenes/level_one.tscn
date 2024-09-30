@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b1eecjfd1s3ls" path="res://Scenes/key.tscn" id="6_nw6m3"]
 [ext_resource type="PackedScene" uid="uid://du6u38o5k27oi" path="res://Scenes/door.tscn" id="9_ox528"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vy2xm"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jp7vl"]
 texture = ExtResource("1_pq3q4")
 2:2/0 = 0
 3:2/0 = 0
@@ -390,7 +390,7 @@ texture = ExtResource("1_pq3q4")
 35:23/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_4c7st"]
-sources/0 = SubResource("TileSetAtlasSource_vy2xm")
+sources/0 = SubResource("TileSetAtlasSource_jp7vl")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gx5oq"]
 texture = ExtResource("2_s0okr")
@@ -1202,21 +1202,8 @@ scale = Vector2(2, 2)
 [node name="keys" type="Node2D" parent="."]
 
 [node name="key" parent="keys" instance=ExtResource("6_nw6m3")]
-position = Vector2(1253, 333)
+position = Vector2(2932, 611)
 scale = Vector2(2.5, 2.5)
-
-[node name="player" type="Node2D" parent="."]
-
-[node name="player" parent="player" instance=ExtResource("3_vutlg")]
-position = Vector2(76, 503)
-
-[node name="Camera2D" type="Camera2D" parent="player/player"]
-zoom = Vector2(2.7, 2.7)
-limit_left = 0
-limit_top = 0
-limit_right = 3000
-limit_bottom = 650
-position_smoothing_enabled = true
 
 [node name="enemies" type="Node2D" parent="."]
 
@@ -1243,6 +1230,19 @@ scale = Vector2(1.5, 1.5)
 [node name="human_man5" parent="enemies" instance=ExtResource("5_myj7h")]
 position = Vector2(2787, 381)
 scale = Vector2(1.5, 1.5)
+
+[node name="player" type="Node2D" parent="."]
+
+[node name="player" parent="player" instance=ExtResource("3_vutlg")]
+position = Vector2(76, 503)
+
+[node name="Camera2D" type="Camera2D" parent="player/player"]
+zoom = Vector2(2.7, 2.7)
+limit_left = 0
+limit_top = 0
+limit_right = 3000
+limit_bottom = 650
+position_smoothing_enabled = true
 
 [node name="enemy_walls" type="Node2D" parent="."]
 

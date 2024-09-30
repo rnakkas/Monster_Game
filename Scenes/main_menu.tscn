@@ -686,6 +686,7 @@ offset_right = 1331.0
 offset_bottom = 210.0
 
 [node name="title" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 11.0
 offset_right = 1072.0

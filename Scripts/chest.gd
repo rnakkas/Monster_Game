@@ -18,5 +18,4 @@ func _on_body_entered(body: Node2D) -> void:
 			game_manager._update_chest_opened()
 			DialogManager._start_dialog(global_position, CHEST_EMPTY_LINE)
 		else:
-			print("locked")
 			DialogManager._start_dialog(global_position, CHEST_LOCKED_LINE)
