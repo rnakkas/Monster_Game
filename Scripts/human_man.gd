@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var raycast_left := $raycast_left
 @onready var enemy_attack_area = $enemy_attack_area
 @onready var enemy_hurt_area = $enemy_hurt_area
+@onready var hurt_sound: AudioStreamPlayer2D = $hurt_sound
 
 @export var speed: float = 30.0
 @export var chase_speed: float = 130.0
@@ -48,6 +49,7 @@ func _enter_state() -> void:
 			animation.play("walk")
 		STATE.HURT:
 			_turn_collisions_off()
+			hurt_sound.play()
 			health -= 1.0
 			animation.play("hurt")
 		STATE.DEATH:

@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://du6u38o5k27oi"]
+[gd_scene load_steps=13 format=3 uid="uid://du6u38o5k27oi"]
 
 [ext_resource type="Texture2D" uid="uid://dbonv4llrgnnr" path="res://Assets/KingsPigs/11-Door/Idle.png" id="1_iop8r"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="1_tpahx"]
 [ext_resource type="Texture2D" uid="uid://c6fppkiet47fn" path="res://Assets/KingsPigs/11-Door/Opening (46x56).png" id="2_k75df"]
+[ext_resource type="AudioStream" uid="uid://dh6erx8n7yb1e" path="res://Assets/brackeys_platformer_assets/sounds/explosion.wav" id="4_r8bhb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jkman"]
 atlas = ExtResource("1_iop8r")
@@ -94,6 +95,9 @@ animation = &"open"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_uaawh")
+
+[node name="open_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_r8bhb")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

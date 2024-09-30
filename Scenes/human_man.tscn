@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dbv5vhnabet18"]
+[gd_scene load_steps=32 format=3 uid="uid://dbv5vhnabet18"]
 
 [ext_resource type="Texture2D" uid="uid://ciih4ud7t4nob" path="res://Assets/Villagers/3 Man/Man_death.png" id="1_gamp4"]
 [ext_resource type="Texture2D" uid="uid://xcsyp202dtnx" path="res://Assets/Villagers/3 Man/Man_attack.png" id="1_o6q5p"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c1o2ylh0aybkd" path="res://Assets/Villagers/3 Man/Man_hurt.png" id="2_caqbb"]
 [ext_resource type="Texture2D" uid="uid://cje1mtcinqa4j" path="res://Assets/Villagers/3 Man/Man_idle.png" id="3_1nbcp"]
 [ext_resource type="Texture2D" uid="uid://j8c7qf2bhk3v" path="res://Assets/Villagers/3 Man/Man_walk.png" id="4_lsgd4"]
+[ext_resource type="AudioStream" uid="uid://ba1t1nhq2pg0r" path="res://Assets/brackeys_platformer_assets/sounds/hurt.wav" id="7_npy7m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i8os6"]
 atlas = ExtResource("1_o6q5p")
@@ -238,6 +239,10 @@ position = Vector2(2.5, 11)
 scale = Vector2(0.795, 1)
 shape = SubResource("RectangleShape2D_asfpq")
 debug_color = Color(0.262683, 0.783178, 7.70092e-07, 0.419608)
+
+[node name="hurt_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_npy7m")
+volume_db = 1.195
 
 [connection signal="body_entered" from="enemy_attack_area" to="." method="_on_enemy_attack_area_body_entered"]
 [connection signal="body_exited" from="enemy_attack_area" to="." method="_on_enemy_attack_area_body_exited"]

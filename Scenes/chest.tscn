@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0biwe6mxpyry"]
+[gd_scene load_steps=8 format=3 uid="uid://c0biwe6mxpyry"]
 
 [ext_resource type="Script" path="res://Scripts/chest.gd" id="1_oxgji"]
 [ext_resource type="Texture2D" uid="uid://brkbw2q3unx1v" path="res://Assets/Collectibles/chest_sprite.png" id="1_u7rao"]
+[ext_resource type="AudioStream" uid="uid://b3owkx1q23ffg" path="res://Assets/brackeys_platformer_assets/sounds/power_up.wav" id="3_fyoey"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_68lo0"]
 atlas = ExtResource("1_u7rao")
@@ -45,5 +46,8 @@ animation = &"closed"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_i15bp")
+
+[node name="open_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_fyoey")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

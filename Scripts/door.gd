@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 @onready var game_manager: Node = %game_manager
+@onready var open_sound: AudioStreamPlayer2D = $open_sound
 
 const DOOR_LOCKED_LINE: Array[String] = ["You cannot leave without opening the chest!"]
 
@@ -11,6 +12,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "player":
 		if game_manager.chest_opened:
+			open_sound.play()
 			animation.play("open")
 		else:
 			print("open the chest")

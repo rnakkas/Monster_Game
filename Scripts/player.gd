@@ -10,6 +10,9 @@ extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 @onready var pause_menu_1 = $pause_menu_1
 @onready var game_over = $game_over
+@onready var jump_sound: AudioStreamPlayer2D = $jump_sound
+@onready var hurt_sound: AudioStreamPlayer2D = $hurt_sound
+@onready var death_sound: AudioStreamPlayer2D = $death_sound
 
 enum STATE {IDLE, RUN, JUMP, FALL, HEADSTOMP, HURT, DEATH}
 var current_state : STATE
@@ -56,6 +59,7 @@ func _enter_state() -> void:
 			animation.play("run")
 		STATE.JUMP:
 			velocity.y = JUMP_VELOCITY
+			jump_sound.play()
 			animation.play("jump")
 		STATE.FALL:
 			animation.play("fall")
@@ -64,8 +68,10 @@ func _enter_state() -> void:
 			animation.play("jump")
 		STATE.HURT:
 			health -= 1.0 
+			hurt_sound.play()
 			animation.play("hurt")
 		STATE.DEATH:
+			death_sound.play()
 			animation.play("death")
 
 func _update_state(delta: float) -> void:
